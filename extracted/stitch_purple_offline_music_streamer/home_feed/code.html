@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "inverse-on-surface": "#362d3f",
+                    "error-container": "#93000a",
+                    "primary-fixed": "#dde1ff",
+                    "on-primary-fixed": "#001355",
+                    "on-secondary-container": "#c4b0dd",
+                    "on-background": "#ecddf6",
+                    "tertiary-fixed-dim": "#d2bbff",
+                    "on-primary": "#002387",
+                    "primary": "#b8c3ff",
+                    "on-surface": "#ecddf6",
+                    "on-secondary-fixed-variant": "#4f4065",
+                    "on-primary-container": "#efefff",
+                    "surface-container-high": "#2f2638",
+                    "on-secondary-fixed": "#231437",
+                    "inverse-primary": "#104af0",
+                    "outline": "#8e90a2",
+                    "secondary-fixed-dim": "#d3beeb",
+                    "on-tertiary-fixed-variant": "#5a00c6",
+                    "background": "#181021",
+                    "on-tertiary-container": "#f6ecff",
+                    "tertiary-fixed": "#eaddff",
+                    "error": "#ffb4ab",
+                    "inverse-surface": "#ecddf6",
+                    "on-secondary": "#38294d",
+                    "secondary": "#d3beeb",
+                    "outline-variant": "#434656",
+                    "surface-bright": "#3f3548",
+                    "on-tertiary-fixed": "#25005a",
+                    "surface-container-lowest": "#120b1b",
+                    "on-primary-fixed-variant": "#0035bd",
+                    "surface-container-low": "#201829",
+                    "surface": "#181021",
+                    "surface-tint": "#b8c3ff",
+                    "surface-variant": "#3a3144",
+                    "surface-dim": "#181021",
+                    "secondary-container": "#524267",
+                    "tertiary": "#d2bbff",
+                    "on-tertiary": "#3f008e",
+                    "tertiary-container": "#8342f4",
+                    "secondary-fixed": "#eddcff",
+                    "surface-container": "#241c2e",
+                    "on-error": "#690005",
+                    "primary-fixed-dim": "#b8c3ff",
+                    "primary-container": "#2d5bff",
+                    "on-surface-variant": "#c4c5d9",
+                    "surface-container-highest": "#3a3144",
+                    "on-error-container": "#ffdad6"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "xl": "32px",
+                    "lg": "24px",
+                    "xs": "8px",
+                    "margin-mobile": "20px",
+                    "md": "16px",
+                    "base": "4px",
+                    "gutter": "16px"
+            },
+            "fontFamily": {
+                    "headline-xl": ["Be Vietnam Pro"],
+                    "label-caps": ["Be Vietnam Pro"],
+                    "body-lg": ["Be Vietnam Pro"],
+                    "body-sm": ["Be Vietnam Pro"],
+                    "headline-md": ["Be Vietnam Pro"]
+            },
+            "fontSize": {
+                    "headline-xl": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body-lg min-h-screen pb-40">
+<!-- Top Navigation Anchor (Shared Component Mapping) -->
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-5 h-16 bg-slate-950/80 backdrop-blur-xl border-b border-white/5 shadow-[0_20px_40px_rgba(5,2,8,0.4)]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-600 dark:text-blue-500 scale-125" data-icon="radio_button_checked">radio_button_checked</span>
+<span class="font-be-vietnam-pro text-lg font-bold text-on-background">Pulse</span>
+</div>
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform text-slate-400 hover:opacity-80">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-white/10">
+<img alt="User Profile" data-alt="Portrait of a person with stylish lighting, deep purple background tones to match the music app aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeiHpY_H-1ZgE82YnoacB21G_L3AekGhMlriNmSzC8-oaf3SYUB1sUAxKQ7PbimVNtv5AA_NhppCv4sOJJz7uzNHKOD9U5jNs0jxuPSKOyKPziAGqAXiE38JSewsrXlsQ3RihAv6rh73lt1Ygw_22ZiNeUOzv9N7bdcVx3HfLhChLEU9wqUW37xdg3Jbgzwihb97Xw98E0Se4r2cJjPJRHMEHBrPTgWrg7pQffUY9oFDr6y4jA3BeTC6s5HMf9DVlgx54Y5oLUQA"/>
+</div>
+</div>
+</header>
+<main class="pt-24 px-margin-mobile">
+<!-- Search Section -->
+<section class="mb-lg">
+<div class="relative group">
+<div class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-outline">
+<span class="material-symbols-outlined" data-icon="search">search</span>
+</div>
+<input class="w-full h-14 bg-surface-container-highest border-none rounded-xl pl-12 pr-4 text-on-surface-variant focus:ring-2 focus:ring-primary-container placeholder:text-outline transition-all" placeholder="Search songs" type="text"/>
+</div>
+</section>
+<!-- Genre Quick Filters -->
+<section class="mb-lg -mx-margin-mobile px-margin-mobile overflow-x-auto no-scrollbar flex gap-sm">
+<button class="flex-none px-md py-xs rounded-full bg-tertiary-container text-on-tertiary-container font-label-caps text-label-caps active:scale-95 transition-all">For You</button>
+<button class="flex-none px-md py-xs rounded-full border border-outline-variant text-on-surface font-label-caps text-label-caps hover:bg-surface-variant transition-all">Deep House</button>
+<button class="flex-none px-md py-xs rounded-full border border-outline-variant text-on-surface font-label-caps text-label-caps hover:bg-surface-variant transition-all">Lo-Fi</button>
+<button class="flex-none px-md py-xs rounded-full border border-outline-variant text-on-surface font-label-caps text-label-caps hover:bg-surface-variant transition-all">Techno</button>
+<button class="flex-none px-md py-xs rounded-full border border-outline-variant text-on-surface font-label-caps text-label-caps hover:bg-surface-variant transition-all">Synthwave</button>
+</section>
+<!-- Featured Bento Feed -->
+<section class="mb-xl">
+<div class="grid grid-cols-2 gap-md">
+<!-- Large Featured Card -->
+<div class="col-span-2 relative h-48 rounded-xl overflow-hidden group shadow-lg">
+<img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Abstract vibrant audio waves and neon pulses in deep blue and purple lighting, sleek electronic music aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA94YPeNhqAVb-bKRT1nmux5kMaqQYbJRKBvWyaSum6xXq-CTQXyEpthgrG408vds1mhJjnCEGke7NfvGm7xh8RiicWsy5Mmaf38-NSvEEqDbRrTDf5sWEjVuZIm__SbcDFEfNPfG_MJHIxzfd07PULLHHlfm_P8Qj_xYxAJR9ofNtE-5TS06yDGFTo7iY6WSsizODRF6uH4wATr-3cVe3JtW5PFQ9x77MbP5oruo45VGevCiT891TVsg8ZdZrsxyz1-ay2wtr1KA"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent opacity-80"></div>
+<div class="absolute bottom-4 left-4 right-4">
+<span class="text-label-caps font-label-caps text-primary-fixed mb-1 block">NEW RELEASE</span>
+<h2 class="text-headline-md font-headline-md text-white mb-1">Neon Horizons</h2>
+<p class="text-body-sm font-body-sm text-slate-300">Midnight Pulse • 4:20</p>
+</div>
+<button class="absolute bottom-4 right-4 w-12 h-12 bg-primary-container rounded-full flex items-center justify-center text-white shadow-xl active:scale-90 transition-transform">
+<span class="material-symbols-outlined" data-icon="play_arrow" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</button>
+</div>
+<!-- Song Recommendation List -->
+<div class="col-span-2 space-y-md mt-sm">
+<div class="flex items-center justify-between mb-sm">
+<h3 class="text-headline-md font-headline-md">Recommended</h3>
+<span class="text-body-sm font-body-sm text-primary">See all</span>
+</div>
+<!-- Song Card 1 -->
+<div class="bg-surface-container rounded-xl p-3 flex items-center gap-md border border-white/5 hover:bg-surface-container-high transition-colors group">
+<div class="w-16 h-16 rounded-lg overflow-hidden flex-none relative">
+<img class="w-full h-full object-cover" data-alt="Close up of a vinyl record spinning under cinematic warm and blue lighting with soft bokeh background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHDiXKJRaQPM6ldnUHw5GmYyen1BYgvVF1C-EokgM7-y3eQ79xm0p05e-dUhJQ41HFvSQ97rAwEWQ_I0BDaBcnphCc2PRtDFbtcmCZ2LZIiFhp2dLK4PXwoxATPxhTUH02XpM9eU8zHA9g1zJVdN0Y-PY46-D3zXqPmlZTdih48fkSuQKrSvCNVuBIDqiZx2eqvvmnJoI0_ZYX9sdH9HUj_Vz9LowUbCyrAQ1CVZ3SKqdtPLrYFeDX5Xcu44xY27E23fIOGKEdsg"/>
+</div>
+<div class="flex-grow min-w-0">
+<h4 class="font-headline-md text-body-lg text-on-surface truncate">Ethereal Echoes</h4>
+<p class="font-body-sm text-body-sm text-outline truncate">Solstice Collective</p>
+<span class="text-[10px] text-slate-500 font-label-caps uppercase tracking-tighter">3:45</span>
+</div>
+<div class="flex items-center gap-xs text-outline opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:text-primary active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+<button class="p-2 hover:text-primary active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+</button>
+<button class="p-2 hover:text-primary active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</div>
+</div>
+<!-- Song Card 2 -->
+<div class="bg-surface-container rounded-xl p-3 flex items-center gap-md border border-white/5 hover:bg-surface-container-high transition-colors group">
+<div class="w-16 h-16 rounded-lg overflow-hidden flex-none relative">
+<img class="w-full h-full object-cover" data-alt="Cyberpunk city street at night with glowing signs reflected in rain puddles, vibrant purple and cyan colors" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWMcsPf-Gb_zw3kyyjpA9rFHLEGNI6pONaaOy9qqWqqdw54SuL2pTrPxIRBxLH5LOqgiSkCAZ3cTvn2FTP5KUtUD84kX6sUAANzuPAuoMcA7YJmmo-tJ38S8WHD4hsnBBXonOMhRhMzmc9wi3lXrE-3qGusrdL0TkD_9cz2R9baycO9d-G6ruSgL6Ko5LSBFHl16adYDC4p3oOyGnvVt11NlO9fKGipVdzGgkpeGyTNE_4ZgaN5jxfg38U--gUFKKThHbcJoyjcA"/>
+</div>
+<div class="flex-grow min-w-0">
+<h4 class="font-headline-md text-body-lg text-on-surface truncate">Midnight Drift</h4>
+<p class="font-body-sm text-body-sm text-outline truncate">Nova Kid</p>
+<span class="text-[10px] text-slate-500 font-label-caps uppercase tracking-tighter">5:12</span>
+</div>
+<div class="flex items-center gap-xs text-outline opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:text-primary active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+<button class="p-2 hover:text-primary active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+</button>
+<button class="p-2 hover:text-primary active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</div>
+</div>
+<!-- Song Card 3 -->
+<div class="bg-surface-container rounded-xl p-3 flex items-center gap-md border border-white/5 hover:bg-surface-container-high transition-colors group">
+<div class="w-16 h-16 rounded-lg overflow-hidden flex-none relative">
+<img class="w-full h-full object-cover" data-alt="Concert stage with silhouette of a crowd and dramatic blue stage lights piercing through smoke" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDzJ88ESZsPOktxvVLCEAg7H_-jwTfbjVVjEaHOUM0N_2_4B6uwdguA4LXgx5aUpG-5E8gZ6SzV84nJQ0B4YkuMv-hxOAoW-SHwHxyLrbIHSFdETxGV6AXPvS7fI7MS8TctZXrQWW6uQYy6yGj5SdOkrzN4U9EUaQW4Y5yBBkPpgGti14o9ytiLEVErov9Svk2vQt6AbipOK3SmtlqOdQD76oXxKhzDEBfD-Tp4EsqI4WTciWHQq5BO2MzTXZenioZ8_j0FOWmOfw"/>
+</div>
+<div class="flex-grow min-w-0">
+<h4 class="font-headline-md text-body-lg text-on-surface truncate">Static Waves</h4>
+<p class="font-body-sm text-body-sm text-outline truncate">Quartz Theory</p>
+<span class="text-[10px] text-slate-500 font-label-caps uppercase tracking-tighter">4:01</span>
+</div>
+<div class="flex items-center gap-xs text-outline opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 hover:text-primary active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="favorite">favorite</span>
+</button>
+<button class="p-2 hover:text-primary active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="add_circle">add_circle</span>
+</button>
+<button class="p-2 hover:text-primary active:scale-90 transition-all">
+<span class="material-symbols-outlined" data-icon="download">download</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Sponsor Banner Zone (Fixed above Bottom Nav) -->
+<div class="fixed bottom-[88px] left-0 w-full px-5 pb-4 z-40">
+<div class="bg-surface-container-highest border border-white/5 rounded-xl p-3 flex items-center gap-3 backdrop-blur-md shadow-lg">
+<div class="w-10 h-10 bg-primary-container/20 rounded flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="campaign">campaign</span>
+</div>
+<div class="flex-grow min-w-0">
+<p class="text-label-caps font-label-caps text-slate-400 mb-0.5">Sponsor</p>
+<p class="text-body-sm font-body-sm text-on-surface truncate">Try Pulse Premium: Ad-free and lossless audio.</p>
+</div>
+<button class="text-body-sm font-label-caps text-primary px-3 py-1">Dismiss</button>
+</div>
+</div>
+<!-- Bottom Navigation Shell (Shared Component Mapping) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center pb-safe px-6 bg-slate-950/80 backdrop-blur-[24px] border-t border-white/10 shadow-[0_-10px_30px_rgba(5,2,8,0.5)] h-[88px] rounded-t-lg">
+<a class="flex flex-col items-center justify-center text-blue-500 after:content-[''] after:w-1 after:h-1 after:bg-blue-500 after:rounded-full after:mt-1 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-be-vietnam-pro text-[10px] tracking-wider">home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 hover:text-blue-400 transition-colors active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="library_music">library_music</span>
+<span class="font-be-vietnam-pro text-[10px] tracking-wider uppercase opacity-0">Library</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 hover:text-blue-400 transition-colors active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-be-vietnam-pro text-[10px] tracking-wider uppercase opacity-0">Profile</span>
+</a>
+</nav>
+</body></html>

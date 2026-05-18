@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#eaddff",
+                    "on-error-container": "#ffdad6",
+                    "tertiary": "#d2bbff",
+                    "primary": "#b8c3ff",
+                    "on-primary": "#002387",
+                    "on-tertiary-container": "#f6ecff",
+                    "primary-fixed": "#dde1ff",
+                    "tertiary-fixed-dim": "#d2bbff",
+                    "surface-container-low": "#201829",
+                    "surface-container-highest": "#3a3144",
+                    "surface-variant": "#3a3144",
+                    "on-tertiary": "#3f008e",
+                    "on-secondary-fixed-variant": "#4f4065",
+                    "outline": "#8e90a2",
+                    "on-error": "#690005",
+                    "secondary": "#d3beeb",
+                    "error-container": "#93000a",
+                    "background": "#181021",
+                    "on-secondary-fixed": "#231437",
+                    "surface-container": "#241c2e",
+                    "secondary-container": "#524267",
+                    "on-primary-fixed-variant": "#0035bd",
+                    "inverse-on-surface": "#362d3f",
+                    "primary-fixed-dim": "#b8c3ff",
+                    "on-primary-fixed": "#001355",
+                    "surface-bright": "#3f3548",
+                    "surface-container-high": "#2f2638",
+                    "surface-tint": "#b8c3ff",
+                    "primary-container": "#2d5bff",
+                    "surface-container-lowest": "#120b1b",
+                    "on-secondary": "#38294d",
+                    "on-surface": "#ecddf6",
+                    "on-primary-container": "#efefff",
+                    "tertiary-container": "#8342f4",
+                    "on-tertiary-fixed-variant": "#5a00c6",
+                    "error": "#ffb4ab",
+                    "outline-variant": "#434656",
+                    "secondary-fixed-dim": "#d3beeb",
+                    "secondary-fixed": "#eddcff",
+                    "on-surface-variant": "#c4c5d9",
+                    "inverse-primary": "#104af0",
+                    "inverse-surface": "#ecddf6",
+                    "surface": "#181021",
+                    "on-background": "#ecddf6",
+                    "surface-dim": "#181021",
+                    "on-secondary-container": "#c4b0dd",
+                    "on-tertiary-fixed": "#25005a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "base": "4px",
+                    "lg": "24px",
+                    "xs": "8px",
+                    "gutter": "16px",
+                    "sm": "12px",
+                    "xl": "32px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "body-sm": ["Be Vietnam Pro"],
+                    "headline-xl": ["Be Vietnam Pro"],
+                    "label-caps": ["Be Vietnam Pro"],
+                    "headline-md": ["Be Vietnam Pro"],
+                    "body-lg": ["Be Vietnam Pro"]
+            },
+            "fontSize": {
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-xl": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(36, 28, 46, 0.6);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+        .bg-radial-gradient {
+            background: radial-gradient(circle at 50% 50%, #2d5bff33 0%, #181021 70%);
+        }
+    </style>
+</head>
+<body class="bg-surface-dim text-on-surface font-body-lg min-h-screen flex flex-col items-center justify-center bg-radial-gradient overflow-hidden">
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-5 h-16 bg-slate-950/80 backdrop-blur-xl border-b border-white/5 shadow-[0_20px_40px_rgba(5,2,8,0.4)]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-600 dark:text-blue-500 scale-125" style="font-variation-settings: 'FILL' 1;">radio_button_checked</span>
+<span class="font-be-vietnam-pro text-lg font-bold text-on-surface">STREAM</span>
+</div>
+<div class="hidden md:flex gap-8">
+<span class="font-label-caps text-slate-400 hover:opacity-80 transition-opacity cursor-pointer">Support</span>
+<span class="font-label-caps text-slate-400 hover:opacity-80 transition-opacity cursor-pointer">Premium</span>
+</div>
+</header>
+<main class="relative z-10 w-full max-w-screen-xl px-margin-mobile flex flex-col items-center">
+<div class="mb-xl flex flex-col items-center">
+<div class="w-24 h-24 rounded-full bg-primary-container flex items-center justify-center shadow-[0_0_50px_rgba(45,91,255,0.4)] active:scale-95 transition-transform">
+<span class="material-symbols-outlined text-on-primary-container text-[48px]" style="font-variation-settings: 'FILL' 1;">play_arrow</span>
+</div>
+<h1 class="mt-lg font-headline-xl text-on-surface text-center tracking-tighter">STREAM</h1>
+<p class="mt-base font-body-sm text-on-surface-variant text-center max-w-xs">Your nocturnal portal to high-fidelity rhythmic immersion.</p>
+</div>
+<div class="glass-panel w-full max-w-[420px] rounded-[32px] p-xl border border-white/10 shadow-[0_40px_80px_rgba(5,2,8,0.6)]">
+<form class="flex flex-col gap-lg" onsubmit="return false;">
+<div class="space-y-base">
+<label class="font-label-caps text-on-surface-variant block ml-base">EMAIL ADDRESS</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-xl px-md py-sm text-on-surface focus:outline-none focus:border-primary transition-colors font-body-lg" placeholder="name@email.com" type="email"/>
+</div>
+<div class="space-y-base">
+<div class="flex justify-between items-center px-base">
+<label class="font-label-caps text-on-surface-variant">PASSWORD</label>
+<span class="font-label-caps text-primary hover:opacity-80 transition-opacity cursor-pointer">FORGOT?</span>
+</div>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-xl px-md py-sm text-on-surface focus:outline-none focus:border-primary transition-colors font-body-lg" placeholder="••••••••" type="password"/>
+</div>
+<div class="flex flex-col gap-md mt-md">
+<button class="w-full h-14 bg-primary-container text-on-primary-container font-headline-md rounded-full shadow-[0_4px_24px_rgba(45,91,255,0.3)] hover:opacity-90 active:scale-95 transition-all">
+                        Log In
+                    </button>
+<button class="w-full h-14 bg-transparent border border-outline text-on-surface font-headline-md rounded-full hover:bg-white/5 active:scale-95 transition-all">
+                        Create Account
+                    </button>
+</div>
+</form>
+<div class="mt-xl pt-lg border-t border-white/5">
+<div class="flex justify-center gap-xl items-center">
+<div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 cursor-pointer transition-colors">
+<img alt="" class="w-5 h-5" data-alt="The iconic multi-colored Google 'G' logo presented in a clean, minimalist vector format. It sits against a deep purple, high-fidelity background that matches the nocturnal and sophisticated music streaming app aesthetic. The lighting is soft and ambient, casting a gentle glow on the surrounding glassmorphic interface elements." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjDjiFebuFDIzaoqyCkbEzTsoC8pnNoqxlp8TDX1GdMsBM-1H_VXIXHPZ1z7lGMzU6KjTJWHhYS42QMwOIpGDdHujJFm_IKTKzvP4792arOVIBj5FDlJiR6ajPYvDoypK3hD2RRhEKHcTTYRAT1sxRwcx5nn56pABqMjPqdpBhyBgkcUTdU6ljQ5inpMfGJTQqzX4tJZ4V6YfdzGYcOf7D6XP4Zh_07qG1M2cxoqzX48VBEz50NzQMx3V-0c6hTUu9vtCRMwKFsQ"/>
+</div>
+<div class="w-12 h-12 rounded-full border border-white/10 flex items-center justify-center hover:bg-white/5 cursor-pointer transition-colors">
+<img alt="" class="w-5 h-5 invert" data-alt="A sleek, monochromatic Apple logo rendered in a brilliant white that contrasts sharply against the deep indigo and purple backdrop. The visual style is premium and high-end, evoking a sense of technological sophistication. Ambient indigo lighting creates a soft outer glow around the logo's circular container, fitting the immersive nocturnal brand identity." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3MbE31xy9lazKTjQ7kv2U9LAaDMjRq1SR3wLsxy1Aidv-T6yUrL53cJ-JiMg8r6T-JmWK_WUqgh9qCy4gkIpls89hfvpg8OYO8DQTNa5iNa5-_qLEPLFlojKjfjLQbSNcd9e35VRi9OhDrs_ljjfr6Qf8lJnD6qs7lfP4US8VfnmR3JjzmFI_Xjnp7ld9IDWpDENi5pF4dE5lGvWPg8vIWYnJBCvy5QrQ51FC8T7Dcmy0pxxcCfq6inKgwdNComXbO14qk6g1Vg"/>
+</div>
+</div>
+</div>
+</div>
+</main>
+<div class="absolute inset-0 pointer-events-none">
+<div class="absolute top-[20%] left-[10%] w-96 h-96 bg-primary-container/10 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-[20%] right-[10%] w-[500px] h-[500px] bg-tertiary-container/5 blur-[150px] rounded-full"></div>
+</div>
+<footer class="fixed bottom-0 left-0 w-full z-50 flex justify-center items-center pb-safe px-6 h-[88px] rounded-t-lg bg-slate-950/80 backdrop-blur-[24px] border-t border-white/10 shadow-[0_-10px_30px_rgba(5,2,8,0.5)]">
+<div class="flex gap-12">
+<div class="flex flex-col items-center justify-center text-slate-400 hover:text-blue-400 transition-colors cursor-pointer group">
+<span class="material-symbols-outlined group-active:scale-90 transition-transform duration-200">home</span>
+<span class="font-be-vietnam-pro text-[10px] tracking-wider uppercase mt-1">Home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 hover:text-blue-400 transition-colors cursor-pointer group">
+<span class="material-symbols-outlined group-active:scale-90 transition-transform duration-200">library_music</span>
+<span class="font-be-vietnam-pro text-[10px] tracking-wider uppercase mt-1">Library</span>
+</div>
+<div class="flex flex-col items-center justify-center text-slate-400 hover:text-blue-400 transition-colors cursor-pointer group">
+<span class="material-symbols-outlined group-active:scale-90 transition-transform duration-200">person</span>
+<span class="font-be-vietnam-pro text-[10px] tracking-wider uppercase mt-1">Account</span>
+</div>
+</div>
+</footer>
+</body></html>

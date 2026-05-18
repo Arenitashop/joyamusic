@@ -1,0 +1,1503 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>JoyaMusic - Premium Nocturnal Rhythms</title>
+  
+  <!-- Fonts & Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  
+  <!-- Dynamic Tailwind Configuration linked to CSS custom theme variables -->
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "inverse-on-surface": "var(--inverse-on-surface)",
+            "error-container": "var(--error-container)",
+            "primary-fixed": "var(--primary-fixed)",
+            "on-primary-fixed": "var(--on-primary-fixed)",
+            "on-secondary-container": "var(--on-secondary-container)",
+            "on-background": "var(--on-surface)",
+            "tertiary-fixed-dim": "var(--tertiary-fixed-dim)",
+            "on-primary": "var(--on-primary)",
+            "primary": "var(--primary)",
+            "on-surface": "var(--on-surface)",
+            "on-secondary-fixed-variant": "var(--on-secondary-fixed-variant)",
+            "on-primary-container": "var(--on-primary-container)",
+            "surface-container-high": "var(--surface-container-high)",
+            "on-secondary-fixed": "var(--on-secondary-fixed)",
+            "inverse-primary": "var(--inverse-primary)",
+            "outline": "var(--outline)",
+            "secondary-fixed-dim": "var(--secondary-fixed-dim)",
+            "on-tertiary-fixed-variant": "var(--on-tertiary-fixed-variant)",
+            "background": "var(--surface)",
+            "on-tertiary-container": "var(--on-tertiary-container)",
+            "tertiary-fixed": "var(--tertiary-fixed)",
+            "error": "var(--error)",
+            "inverse-surface": "var(--inverse-surface)",
+            "on-secondary": "var(--on-secondary)",
+            "secondary": "var(--secondary)",
+            "outline-variant": "var(--outline-variant)",
+            "surface-bright": "var(--surface-bright)",
+            "on-tertiary-fixed": "var(--on-tertiary-fixed)",
+            "surface-container-lowest": "var(--surface-container-lowest)",
+            "on-primary-fixed-variant": "var(--on-primary-fixed-variant)",
+            "surface-container-low": "var(--surface-container-low)",
+            "surface": "var(--surface)",
+            "surface-tint": "var(--primary)",
+            "surface-variant": "var(--surface-container-highest)",
+            "surface-dim": "var(--surface-dim)",
+            "secondary-container": "var(--secondary-container)",
+            "tertiary": "var(--tertiary)",
+            "on-tertiary": "var(--on-tertiary)",
+            "tertiary-container": "var(--tertiary-container)",
+            "secondary-fixed": "var(--secondary-fixed)",
+            "surface-container": "var(--surface-container)",
+            "on-error": "var(--on-error)",
+            "primary-fixed-dim": "var(--primary-fixed-dim)",
+            "primary-container": "var(--primary-container)",
+            "on-surface-variant": "var(--on-surface-variant)",
+            "surface-container-highest": "var(--surface-container-highest)",
+            "on-error-container": "var(--on-error-container)"
+          },
+          "borderRadius": {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "sm": "12px",
+            "xl": "32px",
+            "lg": "24px",
+            "xs": "8px",
+            "margin-mobile": "20px",
+            "md": "16px",
+            "base": "4px",
+            "gutter": "16px"
+          },
+          "fontFamily": {
+            "headline-xl": ["Be Vietnam Pro"],
+            "label-caps": ["Be Vietnam Pro"],
+            "body-lg": ["Be Vietnam Pro"],
+            "body-sm": ["Be Vietnam Pro"],
+            "headline-md": ["Be Vietnam Pro"]
+          },
+          "fontSize": {
+            "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+            "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+            "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+          }
+        }
+      }
+    };
+  </script>
+  
+  <!-- Local Styles -->
+  <link href="app.css" rel="stylesheet"/>
+</head>
+<body class="bg-surface font-body-lg text-on-surface select-none" data-theme="purple">
+
+  <!-- Desktop Smartphone Showcase Mock Shell -->
+  <div class="device-container glow-accent">
+    <!-- Smartphone Bezel Notch / Dynamic Island -->
+    <div class="device-notch"></div>
+    
+    <!-- Smartphone Top Status Bar (Wifi, Signal, Time, Battery) -->
+    <div class="device-status-bar">
+      <div id="device-time">10:46</div>
+      <div class="device-status-icons">
+        <span class="material-symbols-outlined text-[12px]">signal_cellular_4_bar</span>
+        <span class="material-symbols-outlined text-[12px]">wifi</span>
+        <div class="flex items-center gap-[1px]">
+          <span class="text-[9px]">84%</span>
+          <span class="material-symbols-outlined text-[14px]">battery_charging_80</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Smartphone Screen Content Wrapper -->
+    <div class="device-content">
+      
+      <!-- ==================== SCREEN 1: WELCOME & AUTHENTICATION ==================== -->
+      <div id="screen-auth" class="app-screen active-screen flex flex-col justify-between p-gutter h-full pb-6 no-scrollbar">
+        <!-- Logo Header -->
+        <header class="flex flex-col items-center mt-6">
+          <div class="w-20 h-20 bg-primary-container rounded-full flex items-center justify-center glow-accent mb-md scale-110">
+            <span class="material-symbols-outlined text-white text-4xl icon-filled">radio_button_checked</span>
+          </div>
+          <h1 id="welcome-text" class="font-headline-xl text-headline-xl text-on-surface tracking-tighter uppercase">JoyaMusic</h1>
+          <p id="welcome-sub" class="font-body-sm text-body-sm text-outline mt-xs text-center max-w-[280px]">Your nocturnal portal to high-fidelity rhythmic immersion.</p>
+        </header>
+
+        <!-- Auth Card -->
+        <div class="w-full glass-panel p-xl rounded-xl shadow-lg border border-white/5 space-y-md my-auto">
+          <form id="login-form" class="flex flex-col gap-lg">
+            <!-- Email -->
+            <div class="flex flex-col space-y-xs">
+              <label class="font-label-caps text-label-caps text-outline uppercase ml-1">Email Address</label>
+              <div class="relative">
+                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-lg">mail</span>
+                <input class="w-full bg-surface-container-low border border-outline-variant rounded-lg py-3 pl-12 pr-4 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-sm" placeholder="name@domain.com" type="email" required value="elena.vance@lumon.corp"/>
+              </div>
+            </div>
+            <!-- Password -->
+            <div class="flex flex-col space-y-xs">
+              <label class="font-label-caps text-label-caps text-outline uppercase ml-1">Password</label>
+              <div class="relative">
+                <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-lg">lock</span>
+                <input class="w-full bg-surface-container-low border border-outline-variant rounded-lg py-3 pl-12 pr-4 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-sm" placeholder="••••••••" type="password" required value="••••••••"/>
+                <button type="button" class="absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface transition-colors">
+                  <span class="material-symbols-outlined text-lg">visibility</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-col space-y-sm pt-xs">
+              <button id="login-submit-btn" type="submit" class="w-full bg-primary-container text-on-primary-container font-headline-md text-headline-md py-3.5 rounded-full active:scale-95 transition-all glow-accent">
+                Log In
+              </button>
+              <div class="flex items-center justify-center space-x-base py-1">
+                <div class="h-px w-full bg-outline-variant/30"></div>
+                <span class="font-label-caps text-label-caps text-outline px-md text-[10px]">OR</span>
+                <div class="h-px w-full bg-outline-variant/30"></div>
+              </div>
+              <button id="create-account-btn" type="button" class="w-full bg-surface-container-high border border-outline-variant/50 text-on-surface font-headline-md text-headline-md py-3.5 rounded-full active:scale-95 transition-all hover:bg-surface-variant">
+                Create Account
+              </button>
+            </div>
+          </form>
+
+          <!-- Footer Oauth links -->
+          <div class="flex justify-between items-center px-xs pt-xs text-[11px]">
+            <a class="font-body-sm text-body-sm text-primary hover:opacity-80 transition-opacity" href="#">Forgot password?</a>
+            <div class="flex space-x-md text-outline">
+              <span class="material-symbols-outlined cursor-pointer hover:text-on-surface transition-colors" title="Google">brand_family</span>
+              <span class="material-symbols-outlined cursor-pointer hover:text-on-surface transition-colors" title="Apple">ios</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col items-center space-y-2 opacity-50">
+          <p class="font-label-caps text-[9px] text-outline uppercase tracking-[0.25em]">Designed for Immersion</p>
+        </div>
+      </div>
+
+
+      <!-- ==================== SCREEN 2: HOME FEED (PULSE DISCOVER) ==================== -->
+      <div id="screen-home" class="app-screen p-0 h-full no-scrollbar">
+        <!-- Top App Bar -->
+        <header class="sticky top-0 w-full z-40 flex justify-between items-center px-margin-mobile h-16 bg-surface-dim/80 backdrop-blur-xl border-b border-white/5 shadow-md">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary scale-125 icon-filled">radio_button_checked</span>
+            <span class="font-bold text-on-background text-lg tracking-tight">JoyaMusic</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <button id="btn-home-notifications" class="active:scale-95 transition-transform text-slate-400 hover:text-on-surface">
+              <span class="material-symbols-outlined">notifications</span>
+            </button>
+            <!-- Avatar click navigates to settings profile -->
+            <div class="w-8 h-8 rounded-full overflow-hidden border border-white/20 cursor-pointer hover:scale-105 active:scale-95 transition-all avatar-click">
+              <img id="avatar-img-home" alt="User Profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTRcqJTGCpuRHL09lYdvD2C73rraPSy_Y3pNOuSvQXa-_xJo-VBEG1GxG4qcuHCZ9ihhZ6HzgQHvTm4tuKxf-I1wfjlyejgQO2WS7qYIjvx4etzxWvIdtq0JtMiYjh3kV0Qae5K_GIy5R3YVL0iFpvw-JX62oi68FuaUa2hU6Hc2IFsmEG3fhnYXggFxEz764yaGNNh_IngZAH2uk2Bei1r7IPdneR56GNDINT2pfBSA71qRdLmuMivTW8wS-nSjxIE9I_NDL_zw"/>
+            </div>
+          </div>
+        </header>
+
+        <div class="px-margin-mobile pt-4 space-y-lg">
+          <!-- Search Bar -->
+          <section>
+            <div class="relative group">
+              <div class="absolute inset-y-0 left-4 flex items-center pointer-events-none text-outline">
+                <span class="material-symbols-outlined">search</span>
+              </div>
+              <input id="search-input" class="w-full h-12 bg-surface-container-highest border-none rounded-xl pl-12 pr-4 text-on-surface focus:ring-2 focus:ring-primary-container placeholder:text-outline/70 transition-all text-body-sm" placeholder="Search songs, artists..." type="text"/>
+            </div>
+          </section>
+
+          <!-- Genre Horizontal Quick Filter Slider -->
+          <section class="-mx-margin-mobile px-margin-mobile overflow-x-auto no-scrollbar flex gap-sm">
+            <div class="category-chip flex-none px-md py-xs rounded-full bg-tertiary-container text-on-tertiary-container font-label-caps text-label-caps active:scale-95 transition-all cursor-pointer">For You</div>
+            <div class="category-chip flex-none px-md py-xs rounded-full border border-outline-variant text-on-surface font-label-caps text-label-caps hover:bg-surface-variant transition-all cursor-pointer">Deep House</div>
+            <div class="category-chip flex-none px-md py-xs rounded-full border border-outline-variant text-on-surface font-label-caps text-label-caps hover:bg-surface-variant transition-all cursor-pointer">Lo-Fi</div>
+            <div class="category-chip flex-none px-md py-xs rounded-full border border-outline-variant text-on-surface font-label-caps text-label-caps hover:bg-surface-variant transition-all cursor-pointer">Techno</div>
+            <div class="category-chip flex-none px-md py-xs rounded-full border border-outline-variant text-on-surface font-label-caps text-label-caps hover:bg-surface-variant transition-all cursor-pointer">Synthwave</div>
+          </section>
+
+          <!-- Featured Bento Release -->
+          <section class="mt-sm">
+            <div class="relative h-44 rounded-xl overflow-hidden group shadow-lg">
+              <img class="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" alt="Bento release" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA94YPeNhqAVb-bKRT1nmux5kMaqQYbJRKBvWyaSum6xXq-CTQXyEpthgrG408vds1mhJjnCEGke7NfvGm7xh8RiicWsy5Mmaf38-NSvEEqDbRrTDf5sWEjVuZIm__SbcDFEfNPfG_MJHIxzfd07PULLHHlfm_P8Qj_xYxAJR9ofNtE-5TS06yDGFTo7iY6WSsizODRF6uH4wATr-3cVe3JtW5PFQ9x77MbP5oruo45VGevCiT891TVsg8ZdZrsxyz1-ay2wtr1KA"/>
+              <div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent opacity-90"></div>
+              <div class="absolute bottom-4 left-4 right-4">
+                <span class="text-[10px] font-label-caps text-primary-fixed mb-1 block tracking-widest font-bold">NEW RELEASE</span>
+                <h2 class="text-headline-md font-headline-md text-white mb-0.5">Neon Horizons</h2>
+                <p class="text-body-sm font-body-sm text-slate-300">Midnight Pulse • 4:20</p>
+              </div>
+              <button id="home-bento-play-btn" class="absolute bottom-4 right-4 w-12 h-12 bg-primary-container rounded-full flex items-center justify-center text-white shadow-xl active:scale-90 transition-all glow-accent">
+                <span class="material-symbols-outlined icon-filled" style="font-size: 28px;">play_arrow</span>
+              </button>
+            </div>
+          </section>
+
+          <!-- Song Recommendation List -->
+          <section class="space-y-sm pb-10">
+            <div class="flex items-center justify-between mb-sm">
+              <h3 class="text-headline-md font-headline-md tracking-tight">Recommended</h3>
+              <span id="btn-recommended-see-all" class="text-body-sm font-body-sm text-primary hover:opacity-80 cursor-pointer">See all</span>
+            </div>
+            
+            <!-- Songs Aggregated Dynamic Container -->
+            <div id="home-songs-list" class="space-y-sm">
+              <!-- JS builds cards dynamically here -->
+            </div>
+          </section>
+        </div>
+      </div>
+
+
+      <!-- ==================== SCREEN 3: PLAYLISTS ==================== -->
+      <div id="screen-playlists" class="app-screen p-0 h-full no-scrollbar">
+        <!-- Top App Bar -->
+        <header class="sticky top-0 w-full z-40 flex justify-between items-center px-margin-mobile h-16 bg-surface-dim/80 backdrop-blur-xl border-b border-white/5 shadow-md">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary scale-125 icon-filled">radio_button_checked</span>
+            <span class="font-bold text-on-surface text-lg">JoyaMusic</span>
+          </div>
+          <div class="flex gap-4 text-slate-400">
+            <span class="material-symbols-outlined hover:text-on-surface cursor-pointer">search</span>
+            <span class="material-symbols-outlined hover:text-on-surface cursor-pointer">more_vert</span>
+          </div>
+        </header>
+
+        <div class="px-margin-mobile pt-4 space-y-lg">
+          <!-- Page Header -->
+          <section>
+            <h2 class="font-headline-xl text-headline-xl text-on-surface mb-1">Your Playlists</h2>
+            <p class="font-body-sm text-body-sm text-on-surface-variant">Curated for your rhythmic journey</p>
+          </section>
+
+          <!-- Playlist Grid -->
+          <section class="grid grid-cols-2 gap-md">
+            
+            <!-- Dynamic Liked Songs Card -->
+            <div id="liked-songs-card" class="glass-card rounded-xl p-2.5 flex flex-col gap-xs active:scale-98 transition-all cursor-pointer group">
+              <div class="aspect-square rounded-lg overflow-hidden bg-gradient-to-br from-primary-container to-tertiary-container flex items-center justify-center relative">
+                <span class="material-symbols-outlined text-on-primary-container text-[48px] icon-filled float-effect">favorite</span>
+                <div class="absolute bottom-2.5 right-2.5 w-8 h-8 bg-blue-600 rounded-full flex items-center justify-center shadow-lg group-hover:scale-105 active:scale-90 transition-all shadow-blue-900/50">
+                  <span class="material-symbols-outlined text-white text-sm icon-filled">play_arrow</span>
+                </div>
+              </div>
+              <div class="px-xs pb-xs">
+                <p class="font-headline-md text-[15px] font-bold text-on-surface truncate">Liked Songs</p>
+                <p id="liked-songs-count" class="font-body-sm text-xs text-on-surface-variant">0 tracks</p>
+              </div>
+            </div>
+
+            <!-- Playlist Card 2 -->
+            <div id="playlist-midnight-pulse" class="glass-card rounded-xl p-2.5 flex flex-col gap-xs active:scale-98 transition-all cursor-pointer group">
+              <div class="aspect-square rounded-lg overflow-hidden relative">
+                <img class="w-full h-full object-cover" alt="Playlist Cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAKUAQEeV3hYhdmp-2S655OYfqjwDXTEx0Q9OmcaEm_GE7k8EOW3T__CipBa5UftviqQXJUe8dE-aBUnRq4rzBv0biYpaYmQ3-Vq01tVwBkPmBTWsXulWdAp-sikXtJ4WYdBnQXZ_NMpQNxJRBeN0iZryk7CMpIA6y07B1-a9Em86Q-iMLuZRqd838QtluW1hT8GQZ3temBk1_u0VQSOycRUOF406dHS5s3FYGEWc-8Ki49wt6JudxmobRHGu4pkG5Tr_vwfl_76g"/>
+                <div class="absolute inset-0 bg-black/20"></div>
+              </div>
+              <div class="px-xs pb-xs">
+                <p class="font-headline-md text-[15px] font-bold text-on-surface truncate">Midnight Pulse</p>
+                <p class="font-body-sm text-xs text-on-surface-variant">54 tracks</p>
+              </div>
+            </div>
+
+            <!-- Playlist Card 3 -->
+            <div id="playlist-smooth-jazz" class="glass-card rounded-xl p-2.5 flex flex-col gap-xs active:scale-98 transition-all cursor-pointer group">
+              <div class="aspect-square rounded-lg overflow-hidden relative">
+                <img class="w-full h-full object-cover" alt="Playlist Cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBpMfdwTK5ybxwYUFBzltKNAkGhhKW_LfxmL6soHBkKYp1k1BWyVlvJ-Zi5rkqUqHm2DtO0LUwiRSmhzw0PMetQqjSHgiCsvS9KTLSjk4sk_kGaaaxRxXR79SHKV5bVtcDMNYDUrM71nI3O20AfSzJUxCvkR62O2EFOmaiTW2zmy88Eax5JWWv_J-SoyEKOEwDtsXQ_UbtKnxqjFvUFMkmZJP0Y4_eSiUTzz4QvjFwAvPLpN2pU4D9wp-o_hSMFwoqRRJkmyptjA"/>
+                <div class="absolute inset-0 bg-black/20"></div>
+              </div>
+              <div class="px-xs pb-xs">
+                <p class="font-headline-md text-[15px] font-bold text-on-surface truncate">Smooth Jazz</p>
+                <p class="font-body-sm text-xs text-on-surface-variant">120 tracks</p>
+              </div>
+            </div>
+
+            <!-- Playlist Card 4 -->
+            <div id="playlist-festival-vibes" class="glass-card rounded-xl p-2.5 flex flex-col gap-xs active:scale-98 transition-all cursor-pointer group">
+              <div class="aspect-square rounded-lg overflow-hidden relative">
+                <img class="w-full h-full object-cover" alt="Playlist Cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOZ6KjWVesOsgf8hsI6liDJhOx49ecaFt8V5neHk9zzjNZH2DxdqTGtDJ4mWeMSGu7igtjql0_N5dSsKSmMZ-kVEiqy8tA5XdW5Ldf-zysovjNDv_EbRS1SB5adb9XIUeBee_SCmvGdp9Z37QqYWaTFWJIaV4xFSe4pG8YrEj8PYwdE2NGtB07xFZ5pb72mg_dA0Eitua4IdVQ8cWamd3MOPYuapno-25gCYqZt-NAqtZVNcMd_pncSMaUOUYZPN0lnrWVB7HFfQ"/>
+                <div class="absolute inset-0 bg-black/20"></div>
+              </div>
+              <div class="px-xs pb-xs">
+                <p class="font-headline-md text-[15px] font-bold text-on-surface truncate">Festival Vibes</p>
+                <p class="font-body-sm text-xs text-on-surface-variant">88 tracks</p>
+              </div>
+            </div>
+
+          </section>
+
+          <!-- Recently Played Tracks list -->
+          <section class="pb-10">
+            <div class="flex justify-between items-center mb-sm">
+              <h3 class="font-headline-md text-headline-md">Recent Tracks</h3>
+              <span id="btn-recent-see-all" class="font-label-caps text-label-caps text-primary cursor-pointer">SEE ALL</span>
+            </div>
+            
+            <!-- Recent List Dynamic aggregates -->
+            <div id="playlists-recent-list" class="space-y-sm">
+              <!-- JS builds list rows dynamically -->
+            </div>
+          </section>
+        </div>
+      </div>
+
+
+      <!-- ==================== SCREEN 4: PROFILE & SETTINGS ==================== -->
+      <div id="screen-profile" class="app-screen p-0 h-full no-scrollbar">
+        <!-- Top App Bar -->
+        <header class="sticky top-0 w-full z-40 flex justify-between items-center px-margin-mobile h-16 bg-surface-dim/80 backdrop-blur-xl border-b border-white/5 shadow-md">
+          <div class="flex items-center gap-3">
+            <span class="material-symbols-outlined text-primary scale-125 icon-filled">radio_button_checked</span>
+            <span class="font-bold text-on-surface text-lg">JoyaMusic</span>
+          </div>
+          <button class="active:scale-95 transition-transform hover:opacity-80 text-slate-400">
+            <span class="material-symbols-outlined">settings</span>
+          </button>
+        </header>
+
+        <div class="px-margin-mobile pt-6 space-y-lg pb-10">
+          
+          <!-- User Profile Details Header -->
+          <section class="flex flex-col items-center">
+            <div class="relative group">
+              <div id="profile-avatar-container" class="w-28 h-28 rounded-full p-1 bg-gradient-to-tr from-blue-600 to-tertiary shadow-[0_0_20px_var(--glow-color)]">
+                <img id="avatar-img-profile" alt="User Profile" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTRcqJTGCpuRHL09lYdvD2C73rraPSy_Y3pNOuSvQXa-_xJo-VBEG1GxG4qcuHCZ9ihhZ6HzgQHvTm4tuKxf-I1wfjlyejgQO2WS7qYIjvx4etzxWvIdtq0JtMiYjh3kV0Qae5K_GIy5R3YVL0iFpvw-JX62oi68FuaUa2hU6Hc2IFsmEG3fhnYXggFxEz764yaGNNh_IngZAH2uk2Bei1r7IPdneR56GNDINT2pfBSA71qRdLmuMivTW8wS-nSjxIE9I_NDL_zw"/>
+              </div>
+              <div id="btn-edit-avatar" class="absolute bottom-0 right-0 bg-primary text-on-primary p-1.5 rounded-full shadow-lg cursor-pointer hover:scale-105 transition-transform active:scale-95 flex items-center justify-center">
+                <span class="material-symbols-outlined text-xs">edit</span>
+              </div>
+            </div>
+            <div class="text-center mt-4">
+              <h1 id="profile-display-name" class="font-headline-xl text-[24px] font-bold text-on-surface">Elena Vance</h1>
+              <p id="profile-display-email" class="font-body-sm text-xs text-on-surface-variant mt-0.5">elena.vance@lumon.corp</p>
+            </div>
+          </section>
+
+          <!-- Interactive Theme Selection Card Grid (Theme Essence) -->
+          <section>
+            <h2 class="font-label-caps text-label-caps text-outline mb-3 uppercase tracking-wider font-bold">Theme Essence</h2>
+            <div class="grid grid-cols-4 gap-3">
+              
+              <!-- Dark Purple Essence (Default) -->
+              <div class="theme-card flex flex-col items-center gap-1.5 cursor-pointer" data-essence="purple">
+                <button class="w-full aspect-square rounded-xl bg-[#181021] border border-white/10 flex items-center justify-center">
+                  <div class="check-indicator"></div>
+                </button>
+                <span class="text-[9px] font-semibold text-on-surface text-center leading-tight">Dark Purple</span>
+              </div>
+              
+              <!-- Midnight Essence -->
+              <div class="theme-card flex flex-col items-center gap-1.5 cursor-pointer" data-essence="midnight">
+                <button class="w-full aspect-square rounded-xl bg-[#050208] border border-white/10 flex items-center justify-center">
+                  <div class="check-indicator"></div>
+                </button>
+                <span class="text-[9px] font-semibold text-on-surface-variant text-center leading-tight">Midnight</span>
+              </div>
+              
+              <!-- Ember Essence -->
+              <div class="theme-card flex flex-col items-center gap-1.5 cursor-pointer" data-essence="ember">
+                <button class="w-full aspect-square rounded-xl bg-gradient-to-br from-[#1a1c2c] to-[#4a192c] border border-white/10 flex items-center justify-center">
+                  <div class="check-indicator"></div>
+                </button>
+                <span class="text-[9px] font-semibold text-on-surface-variant text-center leading-tight">Ember</span>
+              </div>
+              
+              <!-- Deep Sea Essence -->
+              <div class="theme-card flex flex-col items-center gap-1.5 cursor-pointer" data-essence="deepsea">
+                <button class="w-full aspect-square rounded-xl bg-[#0d1b2a] border border-white/10 flex items-center justify-center">
+                  <div class="check-indicator"></div>
+                </button>
+                <span class="text-[9px] font-semibold text-on-surface-variant text-center leading-tight">Deep Sea</span>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- Settings Option List -->
+          <section class="space-y-2">
+            <h2 class="font-label-caps text-label-caps text-outline mb-2 uppercase tracking-wider font-bold">Account Details</h2>
+            
+            <div id="btn-settings-personal-info" class="glass-card rounded-xl p-3.5 flex items-center justify-between cursor-pointer hover:bg-white/5 transition-colors">
+              <div class="flex items-center gap-3.5">
+                <div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center">
+                  <span class="material-symbols-outlined text-secondary text-lg">person_outline</span>
+                </div>
+                <div>
+                  <p class="font-bold text-sm">Personal Information</p>
+                  <p class="text-xs text-on-surface-variant">Name, bio, social links</p>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-outline text-lg">chevron_right</span>
+            </div>
+
+            <div id="btn-settings-security-privacy" class="glass-card rounded-xl p-3.5 flex items-center justify-between cursor-pointer hover:bg-white/5 transition-colors">
+              <div class="flex items-center gap-3.5">
+                <div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center">
+                  <span class="material-symbols-outlined text-secondary text-lg">lock</span>
+                </div>
+                <div>
+                  <p class="font-bold text-sm">Security &amp; Privacy</p>
+                  <p class="text-xs text-on-surface-variant">Password, 2FA, data usage</p>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-outline text-lg">chevron_right</span>
+            </div>
+
+            <div id="btn-settings-notifications" class="glass-card rounded-xl p-3.5 flex items-center justify-between cursor-pointer hover:bg-white/5 transition-colors">
+              <div class="flex items-center gap-3.5">
+                <div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center">
+                  <span class="material-symbols-outlined text-secondary text-lg">notifications</span>
+                </div>
+                <div>
+                  <p class="font-bold text-sm">Notifications</p>
+                  <p class="text-xs text-on-surface-variant">Artist updates, playlists</p>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-outline text-lg">chevron_right</span>
+            </div>
+
+            <div id="btn-settings-language" class="glass-card rounded-xl p-3.5 flex items-center justify-between cursor-pointer hover:bg-white/5 transition-colors">
+              <div class="flex items-center gap-3.5">
+                <div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center">
+                  <span class="material-symbols-outlined text-secondary text-lg">translate</span>
+                </div>
+                <div>
+                  <p class="font-bold text-sm">Language &amp; Region</p>
+                  <p class="text-xs text-on-surface-variant">Spanish, English, region info</p>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-outline text-lg">chevron_right</span>
+            </div>
+
+            <div id="btn-settings-equalizer" class="glass-card rounded-xl p-3.5 flex items-center justify-between cursor-pointer hover:bg-white/5 transition-colors">
+              <div class="flex items-center gap-3.5">
+                <div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center">
+                  <span class="material-symbols-outlined text-secondary text-lg">graphic_eq</span>
+                </div>
+                <div>
+                  <p class="font-bold text-sm">Equalizer &amp; Quality</p>
+                  <p class="text-xs text-on-surface-variant">Streaming quality, dynamic EQ</p>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-outline text-lg">chevron_right</span>
+            </div>
+
+            <div id="btn-settings-sleeptimer" class="glass-card rounded-xl p-3.5 flex items-center justify-between cursor-pointer hover:bg-white/5 transition-colors">
+              <div class="flex items-center gap-3.5">
+                <div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center">
+                  <span class="material-symbols-outlined text-secondary text-lg">bedtime</span>
+                </div>
+                <div>
+                  <p class="font-bold text-sm">Sleep Timer</p>
+                  <p class="text-xs text-on-surface-variant">Auto-pause nocturnal music</p>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-outline text-lg">chevron_right</span>
+            </div>
+
+            <div id="btn-settings-about" class="glass-card rounded-xl p-3.5 flex items-center justify-between cursor-pointer hover:bg-white/5 transition-colors">
+              <div class="flex items-center gap-3.5">
+                <div class="w-9 h-9 rounded-lg bg-surface-container-high flex items-center justify-center">
+                  <span class="material-symbols-outlined text-secondary text-lg">info</span>
+                </div>
+                <div>
+                  <p class="font-bold text-sm">About JoyaMusic</p>
+                  <p class="text-xs text-on-surface-variant">Credits, licensing &amp; terms</p>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-outline text-lg">chevron_right</span>
+            </div>
+          </section>
+
+          <!-- Settings Danger Zone CTAs -->
+          <section class="space-y-3 pt-3">
+            <button id="btn-logout" class="w-full py-3.5 rounded-xl border border-outline-variant text-on-surface font-semibold text-sm flex items-center justify-center gap-2 hover:bg-white/5 transition-colors active:scale-[0.98]">
+              <span class="material-symbols-outlined text-lg">logout</span>
+              Log out
+            </button>
+            <button id="btn-settings-delete-account" class="w-full py-3.5 rounded-xl bg-error-container/10 border border-error-container/40 text-error font-semibold text-sm flex items-center justify-center gap-2 hover:bg-error-container/20 transition-colors active:scale-[0.98]">
+              <span class="material-symbols-outlined text-lg">delete_forever</span>
+              Delete account
+            </button>
+          </section>
+        </div>
+      </div>
+
+      <!-- ==================== PANEL: PERSONAL INFORMATION ==================== -->
+      <div id="panel-personal-info" class="overlay-panel p-0 no-scrollbar">
+        <header class="sticky top-0 w-full z-40 flex justify-between items-center px-margin-mobile h-16 bg-surface-dim/90 backdrop-blur-xl border-b border-white/5 shadow-md">
+          <button id="close-personal-info" class="text-outline hover:text-on-surface active:scale-90 transition-all p-2 rounded-full hover:bg-white/5">
+            <span class="material-symbols-outlined text-2xl">chevron_left</span>
+          </button>
+          <span class="font-label-caps text-[11px] text-outline uppercase tracking-[0.2em] font-bold">Personal Info</span>
+          <div class="w-10"></div> <!-- Spacer -->
+        </header>
+        <div class="px-margin-mobile pt-6 space-y-lg">
+          <!-- Avatar Selector -->
+          <div class="flex flex-col items-center">
+            <div class="relative group">
+              <div id="edit-avatar-ring" class="w-24 h-24 rounded-full p-1 bg-gradient-to-tr from-blue-600 to-tertiary shadow-[0_0_15px_var(--glow-color)]">
+                <img id="edit-avatar-preview" alt="User Profile" class="w-full h-full object-cover rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTRcqJTGCpuRHL09lYdvD2C73rraPSy_Y3pNOuSvQXa-_xJo-VBEG1GxG4qcuHCZ9ihhZ6HzgQHvTm4tuKxf-I1wfjlyejgQO2WS7qYIjvx4etzxWvIdtq0JtMiYjh3kV0Qae5K_GIy5R3YVL0iFpvw-JX62oi68FuaUa2hU6Hc2IFsmEG3fhnYXggFxEz764yaGNNh_IngZAH2uk2Bei1r7IPdneR56GNDINT2pfBSA71qRdLmuMivTW8wS-nSjxIE9I_NDL_zw"/>
+              </div>
+            </div>
+            <p class="font-label-caps text-[9px] text-outline uppercase tracking-widest mt-3 font-bold">Select Avatar Preset</p>
+            <div class="flex gap-3 mt-3">
+              <img class="w-10 h-10 rounded-full border-2 border-primary cursor-pointer hover:border-primary transition-all avatar-preset active:scale-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDTRcqJTGCpuRHL09lYdvD2C73rraPSy_Y3pNOuSvQXa-_xJo-VBEG1GxG4qcuHCZ9ihhZ6HzgQHvTm4tuKxf-I1wfjlyejgQO2WS7qYIjvx4etzxWvIdtq0JtMiYjh3kV0Qae5K_GIy5R3YVL0iFpvw-JX62oi68FuaUa2hU6Hc2IFsmEG3fhnYXggFxEz764yaGNNh_IngZAH2uk2Bei1r7IPdneR56GNDINT2pfBSA71qRdLmuMivTW8wS-nSjxIE9I_NDL_zw" />
+              <img class="w-10 h-10 rounded-full border border-white/10 cursor-pointer hover:border-primary transition-all avatar-preset active:scale-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCeiHpY_H-1ZgE82YnoacB21G_L3AekGhMlriNmSzC8-oaf3SYUB1sUAxKQ7PbimVNtv5AA_NhppCv4sOJJz7uzNHKOD9U5jNs0jxuPSKOyKPziAGqAXiE38JSewsrXlsQ3RihAv6rh73lt1Ygw_22ZiNeUOzv9N7bdcVx3HfLhChLEU9wqUW37xdg3Jbgzwihb97Xw98E0Se4r2cJjPJRHMEHBrPTgWrg7pQffUY9oFDr6y4jA3BeTC6s5HMf9DVlgx54Y5oLUQA" />
+              <img class="w-10 h-10 rounded-full border border-white/10 cursor-pointer hover:border-primary transition-all avatar-preset active:scale-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHDiXKJRaQPM6ldnUHw5GmYyen1BYgvVF1C-EokgM7-y3eQ79xm0p05e-dUhJQ41HFvSQ97rAwEWQ_I0BDaBcnphCc2PRtDFbtcmCZ2LZIiFhp2dLK4PXwoxATPxhTUH02XpM9eU8zHA9g1zJVdN0Y-PY46-D3zXqPmlZTdih48fkSuQKrSvCNVuBIDqiZx2eqvvmnJoI0_ZYX9sdH9HUj_Vz9LowUbCyrAQ1CVZ3SKqdtPLrYFeDX5Xcu44xY27E23fIOGKEdsg" />
+              <img class="w-10 h-10 rounded-full border border-white/10 cursor-pointer hover:border-primary transition-all avatar-preset active:scale-90" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBWMcsPf-Gb_zw3kyyjpA9rFHLEGNI6pONaaOy9qqWqqdw54SuL2pTrPxIRBxLH5LOqgiSkCAZ3cTvn2FTP5KUtUD84kX6sUAANzuPAuoMcA7YJmmo-tJ38S8WHD4hsnBBXonOMhRhMzmc9wi3lXrE-3qGusrdL0TkD_9cz2R9baycO9d-G6ruSgL6Ko5LSBFHl16adYDC4p3oOyGnvVt11NlO9fKGipVdzGgkpeGyTNE_4ZgaN5jxfg38U--gUFKKThHbcJoyjcA" />
+            </div>
+          </div>
+
+          <!-- Form Fields -->
+          <form id="personal-info-form" class="space-y-md pt-2">
+            <div class="flex flex-col space-y-xs">
+              <label class="font-label-caps text-label-caps text-outline uppercase ml-1">Display Name</label>
+              <input id="edit-display-name" class="w-full bg-surface-container-low border border-outline-variant rounded-lg py-3 px-4 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-sm" type="text" required value="Elena Vance"/>
+            </div>
+            <div class="flex flex-col space-y-xs">
+              <label class="font-label-caps text-label-caps text-outline uppercase ml-1">Email Address</label>
+              <input id="edit-display-email" class="w-full bg-surface-container-low border border-outline-variant rounded-lg py-3 px-4 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-sm" type="email" required value="elena.vance@lumon.corp"/>
+            </div>
+            <div class="flex flex-col space-y-xs">
+              <label class="font-label-caps text-label-caps text-outline uppercase ml-1">Bio</label>
+              <textarea id="edit-display-bio" class="w-full h-20 bg-surface-container-low border border-outline-variant rounded-lg py-3 px-4 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-sm no-scrollbar resize-none" placeholder="Add a short bio...">Hi-Fi audio enthusiast and nocturnal music curator.</textarea>
+            </div>
+            <button type="submit" class="w-full bg-primary-container text-on-primary-container font-headline-md text-headline-md py-3.5 rounded-full active:scale-95 transition-all glow-accent mt-4">
+              Save Changes
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- ==================== PANEL: SECURITY & PRIVACY ==================== -->
+      <div id="panel-security-privacy" class="overlay-panel p-0 no-scrollbar">
+        <header class="sticky top-0 w-full z-40 flex justify-between items-center px-margin-mobile h-16 bg-surface-dim/90 backdrop-blur-xl border-b border-white/5 shadow-md">
+          <button id="close-security-privacy" class="text-outline hover:text-on-surface active:scale-90 transition-all p-2 rounded-full hover:bg-white/5">
+            <span class="material-symbols-outlined text-2xl">chevron_left</span>
+          </button>
+          <span class="font-label-caps text-[11px] text-outline uppercase tracking-[0.2em] font-bold">Security & Privacy</span>
+          <div class="w-10"></div> <!-- Spacer -->
+        </header>
+        <div class="px-margin-mobile pt-6 space-y-lg">
+          <section class="space-y-3">
+            <h3 class="font-label-caps text-label-caps text-outline uppercase tracking-wider ml-1 font-bold">Privacy Mode</h3>
+            <div class="glass-card rounded-xl p-4 flex items-center justify-between">
+              <div class="pr-3">
+                <p class="font-bold text-sm">Private Session</p>
+                <p class="text-[11px] text-on-surface-variant max-w-[200px] mt-0.5 leading-normal">Hide your listening activity from friends and show a glowing connection halo.</p>
+              </div>
+              <label class="toggle-switch flex-shrink-0">
+                <input id="toggle-private-session" type="checkbox"/>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <div class="glass-card rounded-xl p-4 flex items-center justify-between">
+              <div class="pr-3">
+                <p class="font-bold text-sm">Data Saver</p>
+                <p class="text-[11px] text-on-surface-variant max-w-[200px] mt-0.5 leading-normal">Stream at lower audio quality when on cellular networks to conserve bandwidth.</p>
+              </div>
+              <label class="toggle-switch flex-shrink-0">
+                <input id="toggle-data-saver" type="checkbox"/>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </section>
+
+          <section class="space-y-3">
+            <h3 class="font-label-caps text-label-caps text-outline uppercase tracking-wider ml-1 font-bold">Two-Factor Auth</h3>
+            <div class="glass-card rounded-xl p-4 flex items-center justify-between">
+              <div class="pr-3">
+                <p class="font-bold text-sm">Enable 2FA</p>
+                <p class="text-[11px] text-on-surface-variant max-w-[200px] mt-0.5 leading-normal">Protect your account with a secondary verification code.</p>
+              </div>
+              <label class="toggle-switch flex-shrink-0">
+                <input id="toggle-2fa" type="checkbox"/>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </section>
+
+          <section class="space-y-3">
+            <h3 class="font-label-caps text-label-caps text-outline uppercase tracking-wider ml-1 font-bold">Change Password</h3>
+            <form id="change-password-form" class="space-y-md">
+              <div class="flex flex-col space-y-xs">
+                <input class="w-full bg-surface-container-low border border-outline-variant rounded-lg py-2.5 px-4 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-sm" type="password" required placeholder="Current Password"/>
+              </div>
+              <div class="flex flex-col space-y-xs">
+                <input class="w-full bg-surface-container-low border border-outline-variant rounded-lg py-2.5 px-4 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-sm" type="password" required placeholder="New Password"/>
+              </div>
+              <button type="submit" class="w-full bg-surface-container-high border border-outline-variant/60 text-on-surface hover:bg-surface-variant font-bold text-xs py-3.5 rounded-full active:scale-98 transition-all">
+                Update Password
+              </button>
+            </form>
+          </section>
+        </div>
+      </div>
+
+      <!-- ==================== PANEL: NOTIFICATIONS SETTINGS ==================== -->
+      <div id="panel-notifications-settings" class="overlay-panel p-0 no-scrollbar">
+        <header class="sticky top-0 w-full z-40 flex justify-between items-center px-margin-mobile h-16 bg-surface-dim/90 backdrop-blur-xl border-b border-white/5 shadow-md">
+          <button id="close-notifications-settings" class="text-outline hover:text-on-surface active:scale-90 transition-all p-2 rounded-full hover:bg-white/5">
+            <span class="material-symbols-outlined text-2xl">chevron_left</span>
+          </button>
+          <span class="font-label-caps text-[11px] text-outline uppercase tracking-[0.2em] font-bold">Notifications</span>
+          <div class="w-10"></div> <!-- Spacer -->
+        </header>
+        <div class="px-margin-mobile pt-6 space-y-lg">
+          <section class="space-y-3">
+            <h3 class="font-label-caps text-label-caps text-outline uppercase tracking-wider ml-1 font-bold">Push Alerts</h3>
+            <div class="glass-card rounded-xl p-4 flex items-center justify-between">
+              <div class="pr-3">
+                <p class="font-bold text-sm">New Music Alerts</p>
+                <p class="text-[11px] text-on-surface-variant max-w-[200px] mt-0.5 leading-normal">Notify when followed artists release new singles or albums.</p>
+              </div>
+              <label class="toggle-switch flex-shrink-0">
+                <input id="push-new-music" type="checkbox" checked/>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <div class="glass-card rounded-xl p-4 flex items-center justify-between">
+              <div class="pr-3">
+                <p class="font-bold text-sm">Playlist Updates</p>
+                <p class="text-[11px] text-on-surface-variant max-w-[200px] mt-0.5 leading-normal">Notify when songs are added to subscribed playlists.</p>
+              </div>
+              <label class="toggle-switch flex-shrink-0">
+                <input id="push-playlist-update" type="checkbox" checked/>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </section>
+
+          <section class="space-y-3">
+            <h3 class="font-label-caps text-label-caps text-outline uppercase tracking-wider ml-1 font-bold">Email Digests</h3>
+            <div class="glass-card rounded-xl p-4 flex items-center justify-between">
+              <div class="pr-3">
+                <p class="font-bold text-sm">Weekly Recommendations</p>
+                <p class="text-[11px] text-on-surface-variant max-w-[200px] mt-0.5 leading-normal">Receive personalized nocturnal music recommendations via email.</p>
+              </div>
+              <label class="toggle-switch flex-shrink-0">
+                <input id="email-weekly" type="checkbox"/>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+            <div class="glass-card rounded-xl p-4 flex items-center justify-between">
+              <div class="pr-3">
+                <p class="font-bold text-sm">Platform Newsletter</p>
+                <p class="text-[11px] text-on-surface-variant max-w-[200px] mt-0.5 leading-normal">Receive announcements and feature updates from JoyaMusic.</p>
+              </div>
+              <label class="toggle-switch flex-shrink-0">
+                <input id="email-platform" type="checkbox"/>
+                <span class="toggle-slider"></span>
+              </label>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <!-- ==================== PANEL: CONNECTED DEVICES ==================== -->
+      <div id="panel-devices" class="overlay-panel p-0 no-scrollbar">
+        <header class="sticky top-0 w-full z-40 flex justify-between items-center px-margin-mobile h-16 bg-surface-dim/90 backdrop-blur-xl border-b border-white/5 shadow-md">
+          <button id="close-devices" class="text-outline hover:text-on-surface active:scale-90 transition-all p-2 rounded-full hover:bg-white/5">
+            <span class="material-symbols-outlined text-2xl">chevron_left</span>
+          </button>
+          <span class="font-label-caps text-[11px] text-outline uppercase tracking-[0.15em] font-bold">Connect to a Device</span>
+          <div class="w-10"></div> <!-- Spacer -->
+        </header>
+        <div class="px-margin-mobile pt-6 space-y-md">
+          <div class="device-item glass-card rounded-xl p-4 flex items-center justify-between cursor-pointer hover:bg-white/5 border border-primary/40" data-device="this-phone">
+            <div class="flex items-center gap-3.5">
+              <span class="material-symbols-outlined text-primary text-xl">smartphone</span>
+              <div>
+                <p class="font-bold text-sm text-primary">This Phone</p>
+                <p class="text-[9px] text-primary/80 font-bold tracking-wider uppercase mt-[2px]">ACTIVE CONNECTION</p>
+              </div>
+            </div>
+            <span class="material-symbols-outlined text-primary text-lg">check_circle</span>
+          </div>
+
+          <div class="device-item glass-card rounded-xl p-4 flex items-center justify-between cursor-pointer hover:bg-white/5 border border-transparent" data-device="living-room">
+            <div class="flex items-center gap-3.5">
+              <span class="material-symbols-outlined text-outline text-xl">tv_gen</span>
+              <div>
+                <p class="font-bold text-sm">Living Room Speakers</p>
+                <p class="text-xs text-on-surface-variant mt-[2px]">AirPlay Connection Available</p>
+              </div>
+            </div>
+            <span class="material-symbols-outlined text-outline text-lg">radio_button_unchecked</span>
+          </div>
+
+          <div class="device-item glass-card rounded-xl p-4 flex items-center justify-between cursor-pointer hover:bg-white/5 border border-transparent" data-device="headphones">
+            <div class="flex items-center gap-3.5">
+              <span class="material-symbols-outlined text-outline text-xl">headphones</span>
+              <div>
+                <p class="font-bold text-sm">Elena's Headphones</p>
+                <p class="text-xs text-on-surface-variant mt-[2px]">Bluetooth Connected</p>
+              </div>
+            </div>
+            <span class="material-symbols-outlined text-outline text-lg">radio_button_unchecked</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== PANEL: CENTER NOTIFICATIONS ==================== -->
+      <div id="panel-center-notifications" class="overlay-panel p-0 no-scrollbar">
+        <header class="sticky top-0 w-full z-40 flex justify-between items-center px-margin-mobile h-16 bg-surface-dim/90 backdrop-blur-xl border-b border-white/5 shadow-md">
+          <button id="close-center-notifications" class="text-outline hover:text-on-surface active:scale-90 transition-all p-2 rounded-full hover:bg-white/5">
+            <span class="material-symbols-outlined text-2xl">chevron_left</span>
+          </button>
+          <span class="font-label-caps text-[11px] text-outline uppercase tracking-[0.2em] font-bold">Notifications</span>
+          <button id="clear-notifications-btn" class="text-xs font-semibold text-primary hover:opacity-80 active:scale-90 transition-transform px-2 py-1">Clear</button>
+        </header>
+        <div class="px-margin-mobile pt-6 space-y-md" id="notifications-list-container">
+          <!-- Notification Card 1 -->
+          <div class="glass-card rounded-xl p-4 flex items-start gap-3.5 notification-card">
+            <div class="w-8 h-8 rounded-full bg-primary/20 flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-primary text-sm icon-filled">campaign</span>
+            </div>
+            <div class="flex-grow min-w-0">
+              <div class="flex justify-between items-start">
+                <p class="font-bold text-xs">Pulse Premium Deal</p>
+                <span class="text-[9px] text-slate-500 font-bold uppercase tracking-wider">Just Now</span>
+              </div>
+              <p class="text-[11px] text-on-surface-variant mt-1 leading-normal">Get 3 months of high-fidelity lossless sound streaming absolutely free. Tap to explore.</p>
+            </div>
+          </div>
+
+          <!-- Notification Card 2 -->
+          <div class="glass-card rounded-xl p-4 flex items-start gap-3.5 notification-card">
+            <div class="w-8 h-8 rounded-full bg-secondary/20 flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-secondary text-sm icon-filled">album</span>
+            </div>
+            <div class="flex-grow min-w-0">
+              <div class="flex justify-between items-start">
+                <p class="font-bold text-xs">New Release by Solstice Collective</p>
+                <span class="text-[9px] text-slate-500 font-bold uppercase tracking-wider">2 hrs ago</span>
+              </div>
+              <p class="text-[11px] text-on-surface-variant mt-1 leading-normal">Solstice Collective just dropped 'Ethereal Echoes'. Start listening inside your For You feed.</p>
+            </div>
+          </div>
+
+          <!-- Notification Card 3 -->
+          <div class="glass-card rounded-xl p-4 flex items-start gap-3.5 notification-card">
+            <div class="w-8 h-8 rounded-full bg-tertiary/20 flex items-center justify-center shrink-0">
+              <span class="material-symbols-outlined text-tertiary text-sm icon-filled">favorite</span>
+            </div>
+            <div class="flex-grow min-w-0">
+              <div class="flex justify-between items-start">
+                <p class="font-bold text-xs">Weekly Rhythms Ready</p>
+                <span class="text-[9px] text-slate-500 font-bold uppercase tracking-wider">1 day ago</span>
+              </div>
+              <p class="text-[11px] text-on-surface-variant mt-1 leading-normal">Your personalized weekly digest is compiled and ready for playback in your library.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== PANEL: MORE SONG OPTIONS ==================== -->
+      <div id="panel-more-options" class="overlay-panel p-0 no-scrollbar">
+        <header class="sticky top-0 w-full z-40 flex justify-between items-center px-margin-mobile h-16 bg-surface-dim/90 backdrop-blur-xl border-b border-white/5 shadow-md">
+          <button id="close-more-options" class="text-outline hover:text-on-surface active:scale-90 transition-all p-2 rounded-full hover:bg-white/5">
+            <span class="material-symbols-outlined text-2xl">close</span>
+          </button>
+          <span id="options-panel-header-title" class="font-label-caps text-[11px] text-outline uppercase tracking-[0.2em] font-bold">Track Options</span>
+          <div class="w-10"></div> <!-- Spacer -->
+        </header>
+        
+        <div class="pt-6 px-margin-mobile flex flex-col items-center">
+          <img id="options-cover-art" class="w-20 h-20 rounded-lg object-cover shadow-lg border border-white/10" src=""/>
+          <h4 id="options-song-title" class="font-bold text-base text-on-surface mt-3 truncate w-[240px] text-center">Song Title</h4>
+          <p id="options-song-artist" class="text-xs text-outline mt-0.5 truncate w-[200px] text-center">Artist Name</p>
+        </div>
+        
+        <div class="px-margin-mobile pt-6 space-y-2">
+          <div class="glass-card rounded-xl p-3.5 flex items-center justify-between cursor-pointer hover:bg-white/5 transition-colors options-action-btn" data-action="add-playlist">
+            <div class="flex items-center gap-3.5">
+              <span class="material-symbols-outlined text-secondary text-lg">playlist_add</span>
+              <p class="font-bold text-sm">Add to Playlist</p>
+            </div>
+            <span class="material-symbols-outlined text-outline text-lg">chevron_right</span>
+          </div>
+
+          <div class="glass-card rounded-xl p-3.5 flex items-center justify-between cursor-pointer hover:bg-white/5 transition-colors options-action-btn" data-action="share">
+            <div class="flex items-center gap-3.5">
+              <span class="material-symbols-outlined text-secondary text-lg">share</span>
+              <p class="font-bold text-sm">Share Track</p>
+            </div>
+            <span class="material-symbols-outlined text-outline text-lg">chevron_right</span>
+          </div>
+
+          <div class="glass-card rounded-xl p-3.5 flex items-center justify-between cursor-pointer hover:bg-white/5 transition-colors options-action-btn" data-action="lyrics">
+            <div class="flex items-center gap-3.5">
+              <span class="material-symbols-outlined text-secondary text-lg">lyrics</span>
+              <p class="font-bold text-sm">Show Lyrics</p>
+            </div>
+            <span class="material-symbols-outlined text-outline text-lg">chevron_right</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== FLOATING SPONSOR BANNER ==================== -->
+      <div id="sponsor-banner" class="absolute bottom-[104px] left-0 w-full px-margin-mobile z-30 transition-all duration-300 ease-out select-none">
+        <div class="bg-surface-container-highest/90 border border-white/10 rounded-xl p-3 flex items-center gap-3 backdrop-blur-md shadow-lg h-[56px] justify-between relative overflow-hidden">
+          <!-- Glow Background -->
+          <div class="absolute inset-0 bg-gradient-to-r from-blue-600/10 to-purple-600/10 pointer-events-none"></div>
+          <div class="flex items-center gap-2.5 z-10 min-w-0 flex-1">
+            <span class="bg-primary/20 text-primary text-[9px] px-1.5 py-0.5 rounded font-bold uppercase tracking-wider shrink-0">Sponsor</span>
+            <p class="text-xs text-on-surface-variant truncate leading-none">Try Premium: Ad-free, Lossless Sound & Offline Mode</p>
+          </div>
+          <div class="flex items-center gap-1.5 z-10 shrink-0">
+            <button id="sponsor-upgrade-btn" class="bg-primary-container text-on-primary-container text-[10px] font-bold px-3 py-1.5 rounded-full uppercase active:scale-90 hover:scale-105 transition-all">Upgrade</button>
+            <button id="sponsor-dismiss-btn" class="text-outline hover:text-on-surface p-1 active:scale-75 transition-all rounded-full hover:bg-white/5">
+              <span class="material-symbols-outlined text-[16px]">close</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== MODAL: DELETE ACCOUNT ==================== -->
+      <div id="modal-delete-account" class="modal-overlay">
+        <div class="modal-content text-center space-y-md">
+          <div class="w-14 h-14 bg-error-container/20 rounded-full flex items-center justify-center text-error mx-auto shadow-lg shadow-red-900/10">
+            <span class="material-symbols-outlined text-3xl">delete_forever</span>
+          </div>
+          <div class="space-y-xs">
+            <h4 class="font-bold text-lg text-on-surface">Delete Account?</h4>
+            <p class="text-xs text-on-surface-variant px-2 leading-relaxed">Are you absolutely sure you want to delete Elena's profile? All your liked tracks and playlists will be lost forever.</p>
+          </div>
+          <div class="flex gap-3 pt-2">
+            <button id="cancel-delete-btn" class="flex-1 py-3 rounded-full bg-surface-container border border-outline-variant/60 text-on-surface font-semibold text-xs active:scale-95 transition-all">
+              Cancel
+            </button>
+            <button id="confirm-delete-btn" class="flex-1 py-3 rounded-full bg-error text-on-error font-semibold text-xs active:scale-95 transition-all shadow-md shadow-red-900/20">
+              Delete
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== PANEL: LANGUAGE & REGION ==================== -->
+      <div id="panel-language-region" class="overlay-panel p-0 no-scrollbar">
+        <header class="sticky top-0 w-full z-40 flex justify-between items-center px-margin-mobile h-16 bg-surface-dim/90 backdrop-blur-xl border-b border-white/5 shadow-md">
+          <button id="close-language" class="text-outline hover:text-on-surface active:scale-90 transition-all p-2 rounded-full hover:bg-white/5">
+            <span class="material-symbols-outlined text-2xl">chevron_left</span>
+          </button>
+          <span class="font-label-caps text-[11px] text-outline uppercase tracking-[0.2em] font-bold">Language &amp; Region</span>
+          <div class="w-10"></div>
+        </header>
+        <div class="px-margin-mobile pt-6 space-y-lg">
+          <section class="space-y-3">
+            <h3 class="font-label-caps text-label-caps text-outline uppercase tracking-wider ml-1 font-bold">App Language</h3>
+            <div class="space-y-2">
+              <div class="lang-item glass-card rounded-xl p-4 flex items-center justify-between cursor-pointer border border-primary" data-lang="es">
+                <span class="font-bold text-sm text-primary">Español</span>
+                <span class="material-symbols-outlined text-primary text-lg">radio_button_checked</span>
+              </div>
+              <div class="lang-item glass-card rounded-xl p-4 flex items-center justify-between cursor-pointer border border-transparent" data-lang="en">
+                <span class="font-bold text-sm text-on-surface">English (US)</span>
+                <span class="material-symbols-outlined text-outline text-lg">radio_button_unchecked</span>
+              </div>
+              <div class="lang-item glass-card rounded-xl p-4 flex items-center justify-between cursor-pointer border border-transparent" data-lang="fr">
+                <span class="font-bold text-sm text-on-surface">Français</span>
+                <span class="material-symbols-outlined text-outline text-lg">radio_button_unchecked</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="space-y-3">
+            <h3 class="font-label-caps text-label-caps text-outline uppercase tracking-wider ml-1 font-bold">Music Region</h3>
+            <div class="space-y-2">
+              <div class="region-item glass-card rounded-xl p-4 flex items-center justify-between cursor-pointer border border-primary" data-region="latam">
+                <span class="font-bold text-sm text-primary">Latin America</span>
+                <span class="material-symbols-outlined text-primary text-lg">radio_button_checked</span>
+              </div>
+              <div class="region-item glass-card rounded-xl p-4 flex items-center justify-between cursor-pointer border border-transparent" data-region="us">
+                <span class="font-bold text-sm text-on-surface">United States</span>
+                <span class="material-symbols-outlined text-outline text-lg">radio_button_unchecked</span>
+              </div>
+            </div>
+          </section>
+
+          <button id="save-language-btn" class="w-full bg-primary text-on-primary font-bold py-3.5 rounded-full active:scale-95 transition-all mt-4 shadow-lg shadow-blue-900/20">
+            Save Preference
+          </button>
+        </div>
+      </div>
+
+      <!-- ==================== PANEL: AUDIO QUALITY & EQUALIZER ==================== -->
+      <div id="panel-audio-equalizer" class="overlay-panel p-0 no-scrollbar">
+        <header class="sticky top-0 w-full z-40 flex justify-between items-center px-margin-mobile h-16 bg-surface-dim/90 backdrop-blur-xl border-b border-white/5 shadow-md">
+          <button id="close-equalizer" class="text-outline hover:text-on-surface active:scale-90 transition-all p-2 rounded-full hover:bg-white/5">
+            <span class="material-symbols-outlined text-2xl">chevron_left</span>
+          </button>
+          <span class="font-label-caps text-[11px] text-outline uppercase tracking-[0.2em] font-bold">Equalizer &amp; Quality</span>
+          <div class="w-10"></div>
+        </header>
+        <div class="px-margin-mobile pt-6 space-y-lg">
+          <section class="space-y-3">
+            <h3 class="font-label-caps text-label-caps text-outline uppercase tracking-wider ml-1 font-bold">Streaming Quality</h3>
+            <div class="grid grid-cols-2 gap-sm">
+              <div class="quality-item glass-card rounded-xl p-3 text-center cursor-pointer border border-transparent" data-quality="low">
+                <p class="font-bold text-xs">96 kbps</p>
+                <p class="text-[9px] text-on-surface-variant mt-0.5">Data Saver</p>
+              </div>
+              <div class="quality-item glass-card rounded-xl p-3 text-center cursor-pointer border border-transparent" data-quality="standard">
+                <p class="font-bold text-xs">160 kbps</p>
+                <p class="text-[9px] text-on-surface-variant mt-0.5">Standard</p>
+              </div>
+              <div class="quality-item glass-card rounded-xl p-3 text-center cursor-pointer border border-primary" data-quality="high">
+                <p class="font-bold text-xs text-primary">320 kbps</p>
+                <p class="text-[9px] text-primary/80 font-bold mt-0.5">HQ Audio</p>
+              </div>
+              <div class="quality-item glass-card rounded-xl p-3 text-center cursor-pointer border border-transparent" data-quality="lossless">
+                <p class="font-bold text-xs">Lossless</p>
+                <p class="text-[9px] text-on-surface-variant mt-0.5">FLAC 24-bit</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="space-y-3">
+            <div class="flex justify-between items-center ml-1">
+              <h3 class="font-label-caps text-label-caps text-outline uppercase tracking-wider font-bold">5-Band Equalizer</h3>
+              <span class="text-[10px] text-primary font-bold uppercase tracking-widest bg-primary/10 px-2 py-0.5 rounded">Custom Mode</span>
+            </div>
+            
+            <div class="glass-card rounded-xl p-4 flex flex-col items-center">
+              <div class="flex justify-between w-full h-[140px] px-2 items-center">
+                <!-- 60 Hz -->
+                <div class="flex flex-col items-center h-full justify-between">
+                  <span id="eq-val-60" class="text-[9px] font-bold text-primary font-mono">+0.0 dB</span>
+                  <div class="relative w-4 h-[100px] flex items-center justify-center">
+                    <input type="range" min="-12" max="12" step="0.5" value="0" class="eq-slider-vertical" data-band="60"/>
+                  </div>
+                  <span class="text-[9px] text-outline font-bold mt-1">60Hz</span>
+                </div>
+                <!-- 230 Hz -->
+                <div class="flex flex-col items-center h-full justify-between">
+                  <span id="eq-val-230" class="text-[9px] font-bold text-primary font-mono">+0.0 dB</span>
+                  <div class="relative w-4 h-[100px] flex items-center justify-center">
+                    <input type="range" min="-12" max="12" step="0.5" value="0" class="eq-slider-vertical" data-band="230"/>
+                  </div>
+                  <span class="text-[9px] text-outline font-bold mt-1">230Hz</span>
+                </div>
+                <!-- 910 Hz -->
+                <div class="flex flex-col items-center h-full justify-between">
+                  <span id="eq-val-910" class="text-[9px] font-bold text-primary font-mono">+0.0 dB</span>
+                  <div class="relative w-4 h-[100px] flex items-center justify-center">
+                    <input type="range" min="-12" max="12" step="0.5" value="0" class="eq-slider-vertical" data-band="910"/>
+                  </div>
+                  <span class="text-[9px] text-outline font-bold mt-1">910Hz</span>
+                </div>
+                <!-- 4 kHz -->
+                <div class="flex flex-col items-center h-full justify-between">
+                  <span id="eq-val-4k" class="text-[9px] font-bold text-primary font-mono">+0.0 dB</span>
+                  <div class="relative w-4 h-[100px] flex items-center justify-center">
+                    <input type="range" min="-12" max="12" step="0.5" value="0" class="eq-slider-vertical" data-band="4k"/>
+                  </div>
+                  <span class="text-[9px] text-outline font-bold mt-1">4kHz</span>
+                </div>
+                <!-- 14 kHz -->
+                <div class="flex flex-col items-center h-full justify-between">
+                  <span id="eq-val-14k" class="text-[9px] font-bold text-primary font-mono">+0.0 dB</span>
+                  <div class="relative w-4 h-[100px] flex items-center justify-center">
+                    <input type="range" min="-12" max="12" step="0.5" value="0" class="eq-slider-vertical" data-band="14k"/>
+                  </div>
+                  <span class="text-[9px] text-outline font-bold mt-1">14kHz</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <button id="reset-eq-btn" class="w-full bg-surface-container-high border border-outline-variant/60 text-on-surface hover:bg-surface-variant font-bold text-xs py-3.5 rounded-full active:scale-95 transition-all mt-2">
+            Reset Flat Equalizer
+          </button>
+        </div>
+      </div>
+
+      <!-- ==================== PANEL: SLEEP TIMER ==================== -->
+      <div id="panel-sleep-timer" class="overlay-panel p-0 no-scrollbar">
+        <header class="sticky top-0 w-full z-40 flex justify-between items-center px-margin-mobile h-16 bg-surface-dim/90 backdrop-blur-xl border-b border-white/5 shadow-md">
+          <button id="close-sleeptimer" class="text-outline hover:text-on-surface active:scale-90 transition-all p-2 rounded-full hover:bg-white/5">
+            <span class="material-symbols-outlined text-2xl">chevron_left</span>
+          </button>
+          <span class="font-label-caps text-[11px] text-outline uppercase tracking-[0.2em] font-bold">Sleep Timer</span>
+          <div class="w-10"></div>
+        </header>
+        <div class="px-margin-mobile pt-6 space-y-lg">
+          <div class="glass-card rounded-xl p-5 flex flex-col items-center text-center space-y-sm">
+            <span class="material-symbols-outlined text-4xl text-primary animate-pulse">bedtime</span>
+            <div>
+              <p class="font-bold text-sm">Nocturnal Sleep Companion</p>
+              <p class="text-xs text-on-surface-variant max-w-[200px] mx-auto mt-1 leading-normal">Set a timer to automatically fade out and pause playback when you fall asleep.</p>
+            </div>
+            <p id="sleep-timer-countdown" class="text-[10px] font-bold text-primary tracking-widest uppercase bg-primary/10 px-3 py-1 rounded-full hidden">00:00 Remaining</p>
+          </div>
+
+          <div class="space-y-2">
+            <div class="sleep-option-card glass-card rounded-xl p-4 flex items-center justify-between cursor-pointer border border-primary" data-time="off">
+              <span class="font-bold text-sm text-primary">Off</span>
+              <span class="material-symbols-outlined text-primary text-lg">radio_button_checked</span>
+            </div>
+            <div class="sleep-option-card glass-card rounded-xl p-4 flex items-center justify-between cursor-pointer border border-transparent" data-time="10">
+              <span class="font-bold text-sm text-on-surface">10 Minutes</span>
+              <span class="material-symbols-outlined text-outline text-lg">radio_button_unchecked</span>
+            </div>
+            <div class="sleep-option-card glass-card rounded-xl p-4 flex items-center justify-between cursor-pointer border border-transparent" data-time="20">
+              <span class="font-bold text-sm text-on-surface">20 Minutes</span>
+              <span class="material-symbols-outlined text-outline text-lg">radio_button_unchecked</span>
+            </div>
+            <div class="sleep-option-card glass-card rounded-xl p-4 flex items-center justify-between cursor-pointer border border-transparent" data-time="45">
+              <span class="font-bold text-sm text-on-surface">45 Minutes</span>
+              <span class="material-symbols-outlined text-outline text-lg">radio_button_unchecked</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== PANEL: ABOUT & CREDITS ==================== -->
+      <div id="panel-about" class="overlay-panel p-0 no-scrollbar">
+        <header class="sticky top-0 w-full z-40 flex justify-between items-center px-margin-mobile h-16 bg-surface-dim/90 backdrop-blur-xl border-b border-white/5 shadow-md">
+          <button id="close-about" class="text-outline hover:text-on-surface active:scale-90 transition-all p-2 rounded-full hover:bg-white/5">
+            <span class="material-symbols-outlined text-2xl">chevron_left</span>
+          </button>
+          <span class="font-label-caps text-[11px] text-outline uppercase tracking-[0.2em] font-bold">About JoyaMusic</span>
+          <div class="w-10"></div>
+        </header>
+        <div class="px-margin-mobile pt-6 space-y-lg text-center flex flex-col items-center">
+          <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-blue-600 to-tertiary shadow-lg flex items-center justify-center text-white">
+            <span class="material-symbols-outlined text-3xl">music_note</span>
+          </div>
+          <div>
+            <h4 class="font-bold text-base text-on-surface mt-3">JoyaMusic Stitch</h4>
+            <p class="text-xs text-outline">Version 3.4.0 (Nocturnal Wave)</p>
+          </div>
+
+          <div class="glass-card rounded-xl p-4 text-left w-full space-y-sm text-xs leading-relaxed text-on-surface-variant mt-2">
+            <p><strong class="text-on-surface">Designed by Antigravity:</strong> Handcrafted under modern web standard paradigms for the ultimate pair programming wow factor.</p>
+            <p><strong class="text-on-surface">Platform Stack:</strong> Built on pure HTML5 Canvas dynamic oscillators, Vanilla HSL CSS variables, and zero dependencies.</p>
+            <p class="border-t border-white/5 pt-2 text-[10px] text-slate-500">&copy; 2026 JoyaMusic Stitch Corp. Google DeepMind team. All rights reserved.</p>
+          </div>
+
+          <button id="about-visit-btn" class="w-full bg-primary text-on-primary font-bold py-3.5 rounded-full active:scale-95 transition-all mt-4">
+            Visit Developer Portal
+          </button>
+        </div>
+      </div>
+
+      <!-- ==================== PANEL: IMMERSIVE LYRICS ==================== -->
+      <div id="panel-lyrics-view" class="overlay-panel p-0 no-scrollbar bg-surface-dim/95 backdrop-blur-3xl">
+        <header class="sticky top-0 w-full z-40 flex justify-between items-center px-margin-mobile h-16 bg-surface-dim/90 backdrop-blur-xl border-b border-white/5 shadow-md">
+          <button id="close-lyrics" class="text-outline hover:text-on-surface active:scale-90 transition-all p-2 rounded-full hover:bg-white/5">
+            <span class="material-symbols-outlined text-2xl">close</span>
+          </button>
+          <span class="font-label-caps text-[11px] text-outline uppercase tracking-[0.2em] font-bold">Immersive Lyrics</span>
+          <div class="w-10"></div>
+        </header>
+        <div class="pt-6 px-margin-mobile flex items-center gap-3">
+          <img id="lyrics-song-cover" class="w-12 h-12 rounded object-cover border border-white/10" src=""/>
+          <div>
+            <h4 id="lyrics-song-title" class="font-bold text-sm text-on-surface">Song Title</h4>
+            <p id="lyrics-song-artist" class="text-xs text-outline mt-0.5">Artist Name</p>
+          </div>
+        </div>
+        <div class="px-margin-mobile pt-8 pb-10 space-y-6 text-center select-none font-bold overflow-y-auto max-h-[360px] no-scrollbar text-lg text-outline" id="lyrics-scroll-container">
+          <p class="lyric-line hover:text-primary transition-colors cursor-pointer" data-time="0">Intro Synth Oscillations...</p>
+          <p class="lyric-line hover:text-primary transition-colors cursor-pointer text-primary glow-text font-extrabold" data-time="12">Driving down the midnight strip alone</p>
+          <p class="lyric-line hover:text-primary transition-colors cursor-pointer" data-time="24">Watching shadows dancing on their own</p>
+          <p class="lyric-line hover:text-primary transition-colors cursor-pointer" data-time="38">Pulse of static glowing through the glass</p>
+          <p class="lyric-line hover:text-primary transition-colors cursor-pointer" data-time="52">Nocturnal beats that make the silence last</p>
+          <p class="lyric-line hover:text-primary transition-colors cursor-pointer" data-time="68">Into the blue, we fade away...</p>
+        </div>
+      </div>
+
+      <!-- ==================== PANEL: SHARE SHEET ==================== -->
+      <div id="panel-share-social" class="overlay-panel p-0 no-scrollbar">
+        <header class="sticky top-0 w-full z-40 flex justify-between items-center px-margin-mobile h-16 bg-surface-dim/90 backdrop-blur-xl border-b border-white/5 shadow-md">
+          <button id="close-share" class="text-outline hover:text-on-surface active:scale-90 transition-all p-2 rounded-full hover:bg-white/5">
+            <span class="material-symbols-outlined text-2xl">close</span>
+          </button>
+          <span class="font-label-caps text-[11px] text-outline uppercase tracking-[0.2em] font-bold">Share Track</span>
+          <div class="w-10"></div>
+        </header>
+        <div class="px-margin-mobile pt-6 space-y-lg text-center flex flex-col items-center">
+          <img id="share-song-cover" class="w-24 h-24 rounded-xl object-cover shadow-lg border border-white/10" src=""/>
+          <div>
+            <h4 id="share-song-title" class="font-bold text-base text-on-surface mt-2 truncate w-[240px] text-center">Song Title</h4>
+            <p id="share-song-artist" class="text-xs text-outline mt-0.5 truncate w-[200px] text-center">Artist Name</p>
+          </div>
+
+          <div class="grid grid-cols-3 gap-md w-full pt-4">
+            <div class="share-item flex flex-col items-center cursor-pointer group active:scale-95 transition-transform" data-platform="instagram">
+              <div class="w-12 h-12 rounded-full bg-gradient-to-tr from-pink-500 to-yellow-500 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                <span class="material-symbols-outlined text-xl">photo_camera</span>
+              </div>
+              <span class="text-[10px] text-outline font-bold mt-2">Instagram</span>
+            </div>
+            <div class="share-item flex flex-col items-center cursor-pointer group active:scale-95 transition-transform" data-platform="twitter">
+              <div class="w-12 h-12 rounded-full bg-blue-400 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                <span class="material-symbols-outlined text-xl">chat</span>
+              </div>
+              <span class="text-[10px] text-outline font-bold mt-2">Twitter</span>
+            </div>
+            <div class="share-item flex flex-col items-center cursor-pointer group active:scale-95 transition-transform" data-platform="whatsapp">
+              <div class="w-12 h-12 rounded-full bg-green-500 flex items-center justify-center text-white shadow-md group-hover:scale-105 transition-transform">
+                <span class="material-symbols-outlined text-xl">call</span>
+              </div>
+              <span class="text-[10px] text-outline font-bold mt-2">WhatsApp</span>
+            </div>
+          </div>
+
+          <button id="share-copy-link-btn" class="w-full bg-surface-container-high border border-outline-variant/60 text-on-surface hover:bg-surface-variant font-bold text-xs py-3.5 rounded-full active:scale-95 transition-all mt-4 flex items-center justify-center gap-2">
+            <span class="material-symbols-outlined text-sm">link</span>
+            Copy Immersive Track Link
+          </button>
+        </div>
+      </div>
+
+      <!-- ==================== PANEL: ADD TO PLAYLIST ==================== -->
+      <div id="panel-add-to-playlist" class="overlay-panel p-0 no-scrollbar">
+        <header class="sticky top-0 w-full z-40 flex justify-between items-center px-margin-mobile h-16 bg-surface-dim/90 backdrop-blur-xl border-b border-white/5 shadow-md">
+          <button id="close-add-playlist" class="text-outline hover:text-on-surface active:scale-90 transition-all p-2 rounded-full hover:bg-white/5">
+            <span class="material-symbols-outlined text-2xl">close</span>
+          </button>
+          <span class="font-label-caps text-[11px] text-outline uppercase tracking-[0.2em] font-bold">Add to Playlist</span>
+          <div class="w-10"></div>
+        </header>
+        <div class="px-margin-mobile pt-6 space-y-md">
+          <p class="text-xs text-on-surface-variant ml-1 leading-normal">Choose a playlist to append the active track.</p>
+          
+          <div class="space-y-sm">
+            <div class="playlist-add-item glass-card rounded-xl p-3 flex items-center justify-between cursor-pointer hover:bg-white/5" data-playlist="midnight">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded bg-primary/20 flex items-center justify-center text-primary text-sm font-bold">MP</div>
+                <div>
+                  <p class="font-bold text-sm">Midnight Pulse</p>
+                  <p class="text-[10px] text-on-surface-variant">Synthwave Special Selection</p>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-outline text-lg">add_circle</span>
+            </div>
+            
+            <div class="playlist-add-item glass-card rounded-xl p-3 flex items-center justify-between cursor-pointer hover:bg-white/5" data-playlist="smooth">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded bg-secondary/20 flex items-center justify-center text-secondary text-sm font-bold">SJ</div>
+                <div>
+                  <p class="font-bold text-sm">Smooth Jazz</p>
+                  <p class="text-[10px] text-on-surface-variant">Lo-Fi study &amp; relax beats</p>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-outline text-lg">add_circle</span>
+            </div>
+
+            <div class="playlist-add-item glass-card rounded-xl p-3 flex items-center justify-between cursor-pointer hover:bg-white/5" data-playlist="festival">
+              <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded bg-tertiary/20 flex items-center justify-center text-tertiary text-sm font-bold">FV</div>
+                <div>
+                  <p class="font-bold text-sm">Festival Vibes</p>
+                  <p class="text-[10px] text-on-surface-variant">Deep House club beats</p>
+                </div>
+              </div>
+              <span class="material-symbols-outlined text-outline text-lg">add_circle</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ==================== PANEL: PREMIUM INSIGHTS ==================== -->
+      <div id="panel-premium-portal" class="overlay-panel p-0 no-scrollbar">
+        <header class="sticky top-0 w-full z-40 flex justify-between items-center px-margin-mobile h-16 bg-surface-dim/90 backdrop-blur-xl border-b border-white/5 shadow-md">
+          <button id="close-premium" class="text-outline hover:text-on-surface active:scale-90 transition-all p-2 rounded-full hover:bg-white/5">
+            <span class="material-symbols-outlined text-2xl">close</span>
+          </button>
+          <span class="font-label-caps text-[11px] text-outline uppercase tracking-[0.2em] font-bold">Choose a Plan</span>
+          <div class="w-10"></div>
+        </header>
+        <div class="px-margin-mobile pt-6 space-y-lg pb-10">
+          <div class="text-center space-y-xs">
+            <h4 class="font-bold text-base text-on-surface">JoyaMusic Pulse Premium</h4>
+            <p class="text-xs text-on-surface-variant leading-relaxed">Experience lossless FLAC sound, offline caching, and completely ad-free stream listening.</p>
+          </div>
+
+          <div class="space-y-3">
+            <div class="premium-tier-card glass-card rounded-2xl p-4 flex flex-col justify-between cursor-pointer border border-transparent" data-tier="free">
+              <div class="flex justify-between items-start w-full">
+                <div>
+                  <p class="font-bold text-sm">Pulse Free</p>
+                  <p class="text-[10px] text-on-surface-variant">Standard streaming with ads</p>
+                </div>
+                <p class="font-bold text-sm">$0<span class="text-[10px] font-normal">/mo</span></p>
+              </div>
+            </div>
+
+            <div class="premium-tier-card glass-card rounded-2xl p-4 flex flex-col justify-between cursor-pointer border-2 border-primary" data-tier="solo">
+              <div class="flex justify-between items-start w-full">
+                <div>
+                  <div class="flex items-center gap-1.5">
+                    <p class="font-bold text-sm text-primary">Hi-Fi Solo</p>
+                    <span class="bg-primary/20 text-primary text-[8px] px-1 rounded font-bold uppercase shrink-0">Best Choice</span>
+                  </div>
+                  <p class="text-[10px] text-primary/80 font-bold">Ad-free + offline 320kbps</p>
+                </div>
+                <p class="font-bold text-sm text-primary">$4.99<span class="text-[10px] font-normal">/mo</span></p>
+              </div>
+            </div>
+
+            <div class="premium-tier-card glass-card rounded-2xl p-4 flex flex-col justify-between cursor-pointer border border-transparent" data-tier="duo">
+              <div class="flex justify-between items-start w-full">
+                <div>
+                  <p class="font-bold text-sm">Lossless Duo</p>
+                  <p class="text-[10px] text-on-surface-variant">Uncompressed FLAC sound + 2 accounts</p>
+                </div>
+                <p class="font-bold text-sm">$8.99<span class="text-[10px] font-normal">/mo</span></p>
+              </div>
+            </div>
+          </div>
+
+          <button id="subscribe-tier-btn" class="w-full bg-primary text-on-primary font-bold py-3.5 rounded-full active:scale-95 transition-all shadow-lg shadow-blue-900/20">
+            Subscribe Now
+          </button>
+        </div>
+      </div>
+
+      <!-- ==================== MODAL: PREMIUM SUCCESS ==================== -->
+      <div id="modal-premium-success" class="modal-overlay">
+        <div class="modal-content text-center space-y-md overflow-hidden relative">
+          <div class="absolute inset-0 bg-gradient-to-tr from-primary/10 to-tertiary/10 pointer-events-none z-0"></div>
+          <div class="w-16 h-16 bg-primary/20 rounded-full flex items-center justify-center text-primary mx-auto shadow-lg shadow-blue-900/10 z-10 relative">
+            <span class="material-symbols-outlined text-3xl animate-bounce">workspace_premium</span>
+          </div>
+          <div class="space-y-xs z-10 relative">
+            <h4 class="font-bold text-lg text-on-surface">Elena Vance Pro Active!</h4>
+            <p class="text-xs text-on-surface-variant px-2 leading-relaxed">Thank you for subscribing! Your nocturnal lossless audio streaming is now unlocked. Advertising banners have been fully deactivated.</p>
+          </div>
+          <button id="premium-success-ok" class="w-full py-3 rounded-full bg-primary text-on-primary font-semibold text-xs active:scale-95 transition-all shadow-md shadow-blue-900/20 z-10 relative">
+            Start Lossless Experience
+          </button>
+        </div>
+      </div>
+
+      <!-- ==================== PANEL: SEARCH RESULTS ==================== -->
+      <div id="panel-search-results" class="overlay-panel p-0 no-scrollbar">
+        <header class="sticky top-0 w-full z-40 flex justify-between items-center px-margin-mobile h-16 bg-surface-dim/90 backdrop-blur-xl border-b border-white/5 shadow-md">
+          <button id="close-search-results" class="text-outline hover:text-on-surface active:scale-90 transition-all p-2 rounded-full hover:bg-white/5">
+            <span class="material-symbols-outlined text-2xl">chevron_left</span>
+          </button>
+          <div class="flex-grow mx-2 relative">
+            <input id="search-input-field" class="w-full bg-surface-container-low border border-outline-variant rounded-full py-1.5 pl-8 pr-4 text-xs text-on-surface focus:border-primary outline-none transition-all" type="text" placeholder="Search songs, artists..."/>
+            <span class="material-symbols-outlined text-outline text-lg absolute left-2.5 top-1.5">search</span>
+            <button id="search-clear-btn" class="absolute right-2.5 top-1.5 text-outline hover:text-on-surface transition-all hidden">
+              <span class="material-symbols-outlined text-base">close</span>
+            </button>
+          </div>
+          <div class="w-6"></div>
+        </header>
+        <div class="px-margin-mobile pt-4 space-y-md">
+          <div class="flex gap-2 overflow-x-auto no-scrollbar py-1" id="search-chips-container">
+            <span class="search-chip flex-none px-3 py-1 rounded-full border border-outline-variant text-[10px] font-bold uppercase tracking-wider text-outline cursor-pointer hover:bg-white/5" data-query="Midnight">Midnight</span>
+            <span class="search-chip flex-none px-3 py-1 rounded-full border border-outline-variant text-[10px] font-bold uppercase tracking-wider text-outline cursor-pointer hover:bg-white/5" data-query="Jazz">Jazz</span>
+            <span class="search-chip flex-none px-3 py-1 rounded-full border border-outline-variant text-[10px] font-bold uppercase tracking-wider text-outline cursor-pointer hover:bg-white/5" data-query="Pulse">Pulse</span>
+            <span class="search-chip flex-none px-3 py-1 rounded-full border border-outline-variant text-[10px] font-bold uppercase tracking-wider text-outline cursor-pointer hover:bg-white/5" data-query="Solstice">Solstice</span>
+          </div>
+
+          <div class="space-y-sm" id="search-results-list">
+            <div class="py-10 text-center text-outline text-body-sm">
+              <span class="material-symbols-outlined text-[48px] opacity-40 mb-2">search</span>
+              <p>Type to search the nocturnal soundscape...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div> <!-- End .device-content -->
+
+
+    <!-- ==================== PERSISTENT COMPONENTS (MINI-PLAYER & BOTTOM NAV) ==================== -->
+    
+    <!-- Docked Mini-Player Bar (Sits on top of nav bar, initially hidden offscreen) -->
+    <div id="mini-player" class="absolute bottom-[84px] left-0 w-full px-margin-mobile z-40 translate-y-[100px] transition-transform duration-300 ease-out cursor-pointer select-none">
+      
+      <!-- Thin playhead timeline indicator -->
+      <div class="absolute top-0 left-0 w-full h-[2.5px] bg-white/10 rounded-t-lg overflow-hidden">
+        <div id="mini-progress-fill" class="h-full bg-blue-500 rounded-r-full transition-[width] duration-100" style="width: 0%;"></div>
+      </div>
+      
+      <div class="bg-surface-container-highest/80 border border-white/5 rounded-xl p-2.5 flex items-center gap-3 backdrop-blur-md shadow-lg h-[64px]">
+        <!-- Cover Art -->
+        <div class="w-10 h-10 rounded-lg overflow-hidden flex-shrink-0">
+          <img id="mini-cover-img" alt="Cover Art" src="" />
+        </div>
+        <!-- Meta Details -->
+        <div class="flex-grow min-w-0">
+          <p id="mini-title" class="font-bold text-xs text-on-surface truncate leading-normal">Song Title</p>
+          <p id="mini-artist" class="font-body-sm text-[10px] text-on-surface-variant truncate leading-none mt-[2px]">Artist Name</p>
+        </div>
+        <!-- Play / Pause btn -->
+        <button id="mini-play-pause-btn" class="w-8 h-8 rounded-full bg-primary-container text-white flex items-center justify-center shadow-md active:scale-90 hover:scale-105 transition-all">
+          <span class="material-symbols-outlined text-[20px] icon-filled">play_arrow</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Bottom Navigation Bar (Docked globally at the base of the device) -->
+    <nav id="global-nav" class="absolute bottom-0 left-0 w-full z-40 flex justify-around items-center pb-safe px-4 bg-slate-950/80 backdrop-blur-[24px] border-t border-white/5 shadow-[0_-10px_30px_rgba(5,2,8,0.5)] h-[84px] rounded-t-lg translate-y-[100px] transition-transform duration-300">
+      
+      <!-- Home tab btn -->
+      <div class="nav-btn flex flex-col items-center justify-center text-blue-500 after:content-[''] after:w-1 after:h-1 after:bg-blue-500 after:rounded-full after:mt-0.5 active:scale-90 transition-transform duration-200 cursor-pointer" data-screen="home">
+        <span class="material-symbols-outlined text-2xl icon-filled">home</span>
+        <span class="font-be-vietnam-pro text-[9px] font-bold uppercase tracking-wider mt-0.5">Home</span>
+      </div>
+      
+      <!-- Playlists tab btn -->
+      <div class="nav-btn flex flex-col items-center justify-center text-slate-400 hover:text-blue-400 transition-colors active:scale-90 transition-transform duration-200 cursor-pointer" data-screen="playlists">
+        <span class="material-symbols-outlined text-2xl">library_music</span>
+        <span class="font-be-vietnam-pro text-[9px] font-bold uppercase tracking-wider mt-0.5">Playlists</span>
+      </div>
+      
+      <!-- Profile tab btn -->
+      <div class="nav-btn flex flex-col items-center justify-center text-slate-400 hover:text-blue-400 transition-colors active:scale-90 transition-transform duration-200 cursor-pointer" data-screen="profile">
+        <span class="material-symbols-outlined text-2xl">person</span>
+        <span class="font-be-vietnam-pro text-[9px] font-bold uppercase tracking-wider mt-0.5">Profile</span>
+      </div>
+      
+    </nav>
+
+
+    <!-- ==================== SCREEN 5: IMMERSIVE FULL NOW PLAYING OVERLAY ==================== -->
+    <div id="now-playing-panel">
+      <!-- Gradient Haze background -->
+      <div class="backdrop-glow"></div>
+      
+      <!-- Ambient Album Art Background Blur Blur Layer -->
+      <div id="np-album-art-bg" class="absolute inset-0 bg-cover bg-center filter blur-[60px] opacity-25 scale-110 pointer-events-none transition-all duration-700"></div>
+
+      <!-- Main Now playing layout container -->
+      <div class="relative z-10 w-full h-full flex flex-col justify-between px-margin-mobile pt-10 pb-8 select-none">
+        
+        <!-- Header -->
+        <header class="flex justify-between items-center h-10">
+          <button id="np-close-btn" class="text-outline hover:text-on-surface active:scale-90 transition-all p-2 rounded-full hover:bg-white/5">
+            <span class="material-symbols-outlined text-2xl">keyboard_arrow_down</span>
+          </button>
+          <span class="font-label-caps text-[10px] text-outline uppercase tracking-[0.2em] font-bold">Now Playing</span>
+          <button id="np-more-options-btn" class="text-outline hover:text-on-surface active:scale-90 transition-all p-2 rounded-full hover:bg-white/5">
+            <span class="material-symbols-outlined text-2xl">more_vert</span>
+          </button>
+        </header>
+
+        <!-- Huge Album Cover Art (Squircle-shape, slow spin when active) -->
+        <div class="my-auto py-4 flex flex-col items-center">
+          <div id="np-cover-container" class="relative w-[260px] h-[260px] rounded-[32px] overflow-hidden shadow-2xl flex items-center justify-center border border-white/10 spin-art spin-art-paused">
+            <img id="np-cover-img" class="w-full h-full object-cover" alt="Album Cover" src="" />
+            <!-- Centered vinyl hole visual element -->
+            <div class="absolute w-8 h-8 rounded-full bg-slate-950/80 border border-white/20 flex items-center justify-center shadow-inner">
+              <div class="w-2.5 h-2.5 rounded-full bg-blue-500 shadow-md"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Meta info (Song title, Artist, Like Heart button) -->
+        <div class="space-y-4">
+          <div class="flex justify-between items-center">
+            <div class="min-w-0 flex-1 pr-4">
+              <h2 id="np-title" class="font-bold text-[22px] text-on-surface truncate tracking-tight leading-tight">Song Title</h2>
+              <p id="np-artist" class="font-body-lg text-sm text-outline truncate leading-none mt-1.5">Artist Name</p>
+            </div>
+            <!-- Interactive Heart -->
+            <button id="np-heart-btn" class="text-outline hover:text-on-surface transition-all active:scale-75">
+              <span class="material-symbols-outlined text-2xl">favorite</span>
+            </button>
+          </div>
+
+          <!-- Canvas Audio Visualizer beats dynamically in sync with audio context analyser -->
+          <div class="relative w-full h-[60px] flex items-center justify-center glass-card rounded-xl overflow-hidden px-2 border border-white/5 shadow-inner">
+            <canvas id="np-visualizer-canvas" class="w-full h-full"></canvas>
+            <div class="absolute inset-0 bg-gradient-to-r from-background/30 via-transparent to-background/30 pointer-events-none"></div>
+          </div>
+
+          <!-- Seekbar scrubber -->
+          <div class="space-y-1.5 pt-2">
+            <div class="relative flex items-center">
+              <input id="np-progress" class="music-slider" type="range" min="0" max="100" value="0" step="0.1"/>
+              <!-- High-precision glowing active fill layer -->
+              <div id="np-progress-fill" class="music-slider-fill" style="width: 0%;"></div>
+            </div>
+            <div class="flex justify-between text-[10px] text-slate-400 font-label-caps font-bold">
+              <span id="np-current-time">0:00</span>
+              <span id="np-duration">0:00</span>
+            </div>
+          </div>
+
+          <!-- Core Playback Controls (Play/Pause is a gorgeous bright blue circle with glow) -->
+          <div class="flex justify-between items-center px-2 py-4">
+            
+            <!-- Shuffle btn -->
+            <button id="np-shuffle-btn" class="text-outline hover:text-on-surface transition-all active:scale-90 p-2">
+              <span class="material-symbols-outlined text-xl">shuffle</span>
+            </button>
+            
+            <!-- Prev track btn -->
+            <button id="np-prev-btn" class="text-on-surface hover:text-primary transition-all active:scale-90 p-2">
+              <span class="material-symbols-outlined text-3xl icon-filled">skip_previous</span>
+            </button>
+            
+            <!-- Play Pause core action button -->
+            <button id="np-play-pause-btn" class="w-16 h-16 bg-primary-container text-white rounded-full flex items-center justify-center shadow-lg active:scale-95 hover:scale-105 transition-all glow-accent">
+              <span class="material-symbols-outlined text-[48px] icon-filled">play_arrow</span>
+            </button>
+            
+            <!-- Next track btn -->
+            <button id="np-next-btn" class="text-on-surface hover:text-primary transition-all active:scale-90 p-2">
+              <span class="material-symbols-outlined text-3xl icon-filled">skip_next</span>
+            </button>
+            
+            <!-- Loop Repeat btn -->
+            <button id="np-repeat-btn" class="text-outline hover:text-on-surface transition-all active:scale-90 p-2">
+              <span class="material-symbols-outlined text-xl">repeat</span>
+            </button>
+
+          </div>
+
+          <!-- Volume adjuster slider bar -->
+          <div class="flex items-center gap-3 px-2 pt-2 text-outline">
+            <span id="np-volume-icon" class="material-symbols-outlined text-lg cursor-pointer hover:text-on-surface transition-colors">volume_up</span>
+            <div class="relative flex-grow flex items-center">
+              <input id="np-volume" class="music-slider" type="range" min="0" max="100" value="80"/>
+              <!-- Volume progress indicator -->
+              <div id="np-volume-fill" class="music-slider-fill" style="width: 80%;"></div>
+            </div>
+            <button id="np-devices-btn" class="text-outline hover:text-on-surface transition-all active:scale-90 p-1 flex items-center justify-center">
+              <span class="material-symbols-outlined text-lg">devices</span>
+            </button>
+          </div>
+
+        </div>
+      </div>
+    </div> <!-- End #now-playing-panel -->
+
+    <!-- Smartphone Home indicator bar -->
+    <div class="device-home-bar"></div>
+  </div> <!-- End .device-container -->
+
+  <!-- Supabase Local Credentials Config -->
+  <script src="supabase-config.js"></script>
+  <!-- Supabase CDN Client Library -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <!-- Local Script Engine -->
+  <script src="app.js"></script>
+</body>
+</html>

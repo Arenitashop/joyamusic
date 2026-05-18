@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Stream - Sophisticated Sound</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#362d3f",
+                        "error-container": "#93000a",
+                        "primary-fixed": "#dde1ff",
+                        "on-primary-fixed": "#001355",
+                        "on-secondary-container": "#c4b0dd",
+                        "on-background": "#ecddf6",
+                        "tertiary-fixed-dim": "#d2bbff",
+                        "on-primary": "#002387",
+                        "primary": "#b8c3ff",
+                        "on-surface": "#ecddf6",
+                        "on-secondary-fixed-variant": "#4f4065",
+                        "on-primary-container": "#efefff",
+                        "surface-container-high": "#2f2638",
+                        "on-secondary-fixed": "#231437",
+                        "inverse-primary": "#104af0",
+                        "outline": "#8e90a2",
+                        "secondary-fixed-dim": "#d3beeb",
+                        "on-tertiary-fixed-variant": "#5a00c6",
+                        "background": "#181021",
+                        "on-tertiary-container": "#f6ecff",
+                        "tertiary-fixed": "#eaddff",
+                        "error": "#ffb4ab",
+                        "inverse-surface": "#ecddf6",
+                        "on-secondary": "#38294d",
+                        "secondary": "#d3beeb",
+                        "outline-variant": "#434656",
+                        "surface-bright": "#3f3548",
+                        "on-tertiary-fixed": "#25005a",
+                        "surface-container-lowest": "#120b1b",
+                        "on-primary-fixed-variant": "#0035bd",
+                        "surface-container-low": "#201829",
+                        "surface": "#181021",
+                        "surface-tint": "#b8c3ff",
+                        "surface-variant": "#3a3144",
+                        "surface-dim": "#181021",
+                        "secondary-container": "#524267",
+                        "tertiary": "#d2bbff",
+                        "on-tertiary": "#3f008e",
+                        "tertiary-container": "#8342f4",
+                        "secondary-fixed": "#eddcff",
+                        "surface-container": "#241c2e",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#b8c3ff",
+                        "primary-container": "#2d5bff",
+                        "on-surface-variant": "#c4c5d9",
+                        "surface-container-highest": "#3a3144",
+                        "on-error-container": "#ffdad6"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "xl": "32px",
+                        "lg": "24px",
+                        "xs": "8px",
+                        "margin-mobile": "20px",
+                        "md": "16px",
+                        "base": "4px",
+                        "gutter": "16px"
+                    },
+                    "fontFamily": {
+                        "headline-xl": ["Be Vietnam Pro"],
+                        "label-caps": ["Be Vietnam Pro"],
+                        "body-lg": ["Be Vietnam Pro"],
+                        "body-sm": ["Be Vietnam Pro"],
+                        "headline-md": ["Be Vietnam Pro"]
+                    },
+                    "fontSize": {
+                        "headline-xl": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+                        "body-lg": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-md": ["20px", { "lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600" }]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .nocturnal-gradient {
+            background: radial-gradient(circle at top left, #241c2e 0%, #181021 100%);
+        }
+        .blue-glow {
+            box-shadow: 0 0 30px rgba(45, 91, 255, 0.3);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background font-body-lg text-on-background min-h-screen nocturnal-gradient flex items-center justify-center p-gutter">
+<!-- Auth Container -->
+<main class="w-full max-w-md flex flex-col items-center">
+<!-- Logo & Branding Section -->
+<header class="flex flex-col items-center mb-xl">
+<!-- Simple Blue Circle Logo (The Rhythmic Anchor) -->
+<div class="w-24 h-24 bg-primary-container rounded-full flex items-center justify-center blue-glow mb-md scale-110">
+<span class="material-symbols-outlined text-white text-5xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">radio_button_checked</span>
+</div>
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tighter">STREAM</h1>
+<p class="font-body-sm text-body-sm text-outline mt-xs">High-fidelity nocturnal rhythms.</p>
+</header>
+<!-- Form Canvas -->
+<div class="w-full glass-panel p-xl rounded-xl shadow-[0_20px_40px_rgba(5,2,8,0.4)] border border-white/5 space-y-lg">
+<div class="space-y-sm">
+<!-- Email Field -->
+<div class="flex flex-col space-y-xs">
+<label class="font-label-caps text-label-caps text-outline uppercase ml-1">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-lg">mail</span>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg py-3 pl-12 pr-4 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-sm" placeholder="name@domain.com" type="email"/>
+</div>
+</div>
+<!-- Password Field -->
+<div class="flex flex-col space-y-xs">
+<label class="font-label-caps text-label-caps text-outline uppercase ml-1">Password</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-lg">lock</span>
+<input class="w-full bg-surface-container-low border border-outline-variant rounded-lg py-3 pl-12 pr-4 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-sm" placeholder="••••••••" type="password"/>
+<button class="absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface transition-colors">
+<span class="material-symbols-outlined text-lg">visibility</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-col space-y-sm pt-xs">
+<button class="w-full bg-primary-container text-on-primary-container font-headline-md text-headline-md py-4 rounded-full active:scale-95 transition-transform blue-glow">
+                    Log In
+                </button>
+<div class="flex items-center justify-center space-x-base py-xs">
+<div class="h-px w-full bg-outline-variant"></div>
+<span class="font-label-caps text-label-caps text-outline px-md">OR</span>
+<div class="h-px w-full bg-outline-variant"></div>
+</div>
+<button class="w-full bg-surface-container-high border border-outline-variant text-on-surface font-headline-md text-headline-md py-4 rounded-full active:scale-95 transition-transform hover:bg-surface-variant transition-colors">
+                    Create Account
+                </button>
+</div>
+<!-- Footer Links -->
+<div class="flex justify-between items-center px-xs pt-sm">
+<a class="font-body-sm text-body-sm text-primary hover:opacity-80 transition-opacity" href="#">Forgot password?</a>
+<div class="flex space-x-md">
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-on-surface transition-colors" title="Login with Google">brand_family</span>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-on-surface transition-colors" title="Login with Apple">ios</span>
+</div>
+</div>
+</div>
+<!-- Decorative Elements -->
+<div class="mt-xl flex flex-col items-center space-y-md">
+<div class="grid grid-cols-3 gap-md opacity-20 grayscale">
+<img alt="album art" class="w-16 h-16 rounded-lg object-cover" data-alt="album cover of minimal techno music with abstract geometric shapes and deep blue tones" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxy60wyIGsk3coG214gU7ByTOPhkZuZ-rXaQnzTO59P0eOGcbhzxvz8Pwp5adfvZu7mWSsmq7SBzI_HyCgPJ_Og8xfOJXTltydvF8YyVF3ZDiS-SW2eJJ2JzX_bNJD5cL3FI36q1LRDR5CW8gCxT36-jjN8GPfVcJmkj6YTVoSnwjAVvk810l2BV2uHEbx9z85wiMl_0vu65EdZ2w6b9zv11ZsFNsTfQC7UD325F4YqAJKTa70pviLN3R2DS4HjpMLDYZPRHEIMQ"/>
+<img alt="album art" class="w-16 h-16 rounded-lg object-cover" data-alt="vibrant abstract digital art representing sound waves in shades of violet and indigo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgm65rOQ_BlRZ63PwXr8ZzQmB1HRQYjk9oHjAXB6i_SpCAy4xXeuGRuYN6qISlArHjW2efnLbKCJ0tJ0rSzHOPEH4W4GHz5AkRXy6dvwtW00rBXmR3DtrY6uGetHeUYq8p77IM8LrvADaR9P-mumYlsYSPu9fF3OIaBtH80_fbp9MOVfnMmaVrcadsb99mJi8JKyeqX9Tc_rJjSAREZQMf1yoDVUR6BrDe9ZOAZNzZq_mDmlD_eREHax07b50UWPahDtvScnV9gQ"/>
+<img alt="album art" class="w-16 h-16 rounded-lg object-cover" data-alt="cinematic close up of a vinyl record spinning under soft purple atmospheric lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCb6mv0sQGkX6xceqXeiVcC5ecYSILjjq_CfcEiPXS2n53MM7Lde5SpyMyJDTwpzWgpbl2N6rn1TNumIWKuCjo3NHFFypc2kFIf2MPfTvAxKXU4ptzw1wrgUF3KNcyu3w8Te5E2UtwHA-phsxQlzAqvAFj_cg8m8CX4kV6JyQs7VavLp6DFGCvFeXjkRCTeTHspjiaInCtxpyw1pYHo6CFz7uICm-IMIvBz612udpoF8MtoQIG2wrdaxp4mtqa0LEcKEYMO_7oTuw"/>
+</div>
+<p class="font-label-caps text-[10px] text-outline uppercase tracking-[0.2em]">Designed for Immersion</p>
+</div>
+</main>
+<!-- Background Accents (Glassmorphism blobs) -->
+<div class="fixed top-[-10%] right-[-10%] w-[400px] h-[400px] bg-tertiary-container/20 rounded-full blur-[100px] -z-10"></div>
+<div class="fixed bottom-[-10%] left-[-10%] w-[300px] h-[300px] bg-primary-container/10 rounded-full blur-[80px] -z-10"></div>
+</body></html>

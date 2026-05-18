@@ -1,0 +1,8 @@
+# Ignore large offline assets and backups
+*.zip
+*.tar.gz
+*.rar
+
+# Ignore OS metadata
+.DS_Store
+Thumbs.db

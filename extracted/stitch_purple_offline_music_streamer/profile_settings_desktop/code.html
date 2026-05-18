@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Be Vietnam Pro', sans-serif;
+            background-color: #181021;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "tertiary-fixed": "#eaddff",
+                    "on-error-container": "#ffdad6",
+                    "tertiary": "#d2bbff",
+                    "primary": "#b8c3ff",
+                    "on-primary": "#002387",
+                    "on-tertiary-container": "#f6ecff",
+                    "primary-fixed": "#dde1ff",
+                    "tertiary-fixed-dim": "#d2bbff",
+                    "surface-container-low": "#201829",
+                    "surface-container-highest": "#3a3144",
+                    "surface-variant": "#3a3144",
+                    "on-tertiary": "#3f008e",
+                    "on-secondary-fixed-variant": "#4f4065",
+                    "outline": "#8e90a2",
+                    "on-error": "#690005",
+                    "secondary": "#d3beeb",
+                    "error-container": "#93000a",
+                    "background": "#181021",
+                    "on-secondary-fixed": "#231437",
+                    "surface-container": "#241c2e",
+                    "secondary-container": "#524267",
+                    "on-primary-fixed-variant": "#0035bd",
+                    "inverse-on-surface": "#362d3f",
+                    "primary-fixed-dim": "#b8c3ff",
+                    "on-primary-fixed": "#001355",
+                    "surface-bright": "#3f3548",
+                    "surface-container-high": "#2f2638",
+                    "surface-tint": "#b8c3ff",
+                    "primary-container": "#2d5bff",
+                    "surface-container-lowest": "#120b1b",
+                    "on-secondary": "#38294d",
+                    "on-surface": "#ecddf6",
+                    "on-primary-container": "#efefff",
+                    "tertiary-container": "#8342f4",
+                    "on-tertiary-fixed-variant": "#5a00c6",
+                    "error": "#ffb4ab",
+                    "outline-variant": "#434656",
+                    "secondary-fixed-dim": "#d3beeb",
+                    "secondary-fixed": "#eddcff",
+                    "on-surface-variant": "#c4c5d9",
+                    "inverse-primary": "#104af0",
+                    "inverse-surface": "#ecddf6",
+                    "surface": "#181021",
+                    "on-background": "#ecddf6",
+                    "surface-dim": "#181021",
+                    "on-secondary-container": "#c4b0dd",
+                    "on-tertiary-fixed": "#25005a"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "md": "16px",
+                    "base": "4px",
+                    "lg": "24px",
+                    "xs": "8px",
+                    "gutter": "16px",
+                    "sm": "12px",
+                    "xl": "32px",
+                    "margin-mobile": "20px"
+            },
+            "fontFamily": {
+                    "body-sm": ["Be Vietnam Pro"],
+                    "headline-xl": ["Be Vietnam Pro"],
+                    "label-caps": ["Be Vietnam Pro"],
+                    "headline-md": ["Be Vietnam Pro"],
+                    "body-lg": ["Be Vietnam Pro"]
+            },
+            "fontSize": {
+                    "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                    "headline-xl": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "700"}],
+                    "headline-md": ["20px", {"lineHeight": "28px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                    "body-lg": ["16px", {"lineHeight": "24px", "fontWeight": "400"}]
+            }
+          },
+        },
+      }
+    </script>
+</head>
+<body class="bg-background text-on-background min-h-screen">
+<header class="fixed top-0 w-full z-50 flex justify-between items-center px-5 h-16 bg-slate-950/80 backdrop-blur-xl border-b border-white/5 shadow-[0_20px_40px_rgba(5,2,8,0.4)]">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-blue-600 dark:text-blue-500 scale-125" data-icon="radio_button_checked">radio_button_checked</span>
+<span class="font-be-vietnam-pro text-lg font-bold text-on-surface">PulseStream</span>
+</div>
+<div class="hidden md:flex gap-8">
+<a class="text-slate-400 font-label-caps hover:opacity-80 transition-opacity" href="#">Home</a>
+<a class="text-slate-400 font-label-caps hover:opacity-80 transition-opacity" href="#">Library</a>
+<a class="text-blue-500 font-label-caps hover:opacity-80 transition-opacity" href="#">Profile</a>
+</div>
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container" data-icon="person">person</span>
+</div>
+</header>
+<div class="flex pt-16 min-h-screen pb-[120px]">
+<aside class="hidden md:flex flex-col w-64 fixed left-0 top-16 bottom-0 bg-surface-container-lowest border-r border-white/5 p-6 gap-2">
+<div class="mb-6 px-4">
+<span class="text-on-surface-variant font-label-caps uppercase text-[10px]">Settings Menu</span>
+</div>
+<nav class="flex flex-col gap-1">
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl bg-primary-container/10 text-blue-500 font-body-lg" href="#">
+<span class="material-symbols-outlined" data-icon="person_outline">person_outline</span>
+<span>Account</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-highest transition-colors font-body-lg" href="#">
+<span class="material-symbols-outlined" data-icon="palette">palette</span>
+<span>Appearance</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-highest transition-colors font-body-lg" href="#">
+<span class="material-symbols-outlined" data-icon="notifications_none">notifications_none</span>
+<span>Notifications</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-highest transition-colors font-body-lg" href="#">
+<span class="material-symbols-outlined" data-icon="security">security</span>
+<span>Privacy</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-highest transition-colors font-body-lg" href="#">
+<span class="material-symbols-outlined" data-icon="devices">devices</span>
+<span>Devices</span>
+</a>
+</nav>
+</aside>
+<main class="flex-1 md:ml-64 p-6 lg:p-12">
+<div class="max-w-4xl mx-auto space-y-12">
+<section class="flex flex-col md:flex-row items-center gap-8 p-8 glass-card rounded-[2rem] shadow-[0_20px_60px_rgba(5,2,8,0.4)]">
+<div class="relative group">
+<img class="w-32 h-32 md:w-48 md:h-48 rounded-full object-cover border-4 border-primary/20" data-alt="A cinematic, high-fashion portrait of a sophisticated person with a creative aura, set against a dark, moody background with subtle purple rim lighting. The style is hyper-realistic and polished, matching a premium music streaming service's nocturnal aesthetic. The lighting is soft but dramatic, emphasizing elegant features and a sense of calm confidence." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDwCEMSukYRjPYTbJTAd54D3LCyqpfm-1yBzTsJCcbss1l_Oh0KfuVyb-V94AA7McYN0YX4cjcVwpA_IddZ445Oh5VG233rrAvC7Tu4nZLsFS_9Py7LsAspkUSVERfzBduZlCDgPiJ9vWA9tpjkTPDoqXQx2dxSZP88fqrbZEZOcUh1YQvR3RSJXb_FLDBi-wuMS8_WhyOxSLzR-6Ugv8RGzEclUDLL8J2VnYV7cxPpMX_-9h4NXE7hNm9rlUS0H6DIuarAhgKL7A"/>
+<div class="absolute inset-0 rounded-full bg-slate-950/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined text-white text-3xl" data-icon="photo_camera">photo_camera</span>
+</div>
+</div>
+<div class="text-center md:text-left space-y-2">
+<h1 class="font-headline-xl text-on-surface">Adrian Nightfall</h1>
+<p class="font-body-lg text-on-surface-variant">adrian.nightfall@pulse.audio</p>
+<div class="flex flex-wrap justify-center md:justify-start gap-3 mt-4">
+<span class="px-4 py-1.5 rounded-full bg-blue-500/10 text-blue-400 text-label-caps border border-blue-500/20">PREMIUM MEMBER</span>
+<span class="px-4 py-1.5 rounded-full bg-tertiary-container/10 text-tertiary text-label-caps border border-tertiary-container/20">CURATOR</span>
+</div>
+</div>
+</section>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<section class="glass-card rounded-[2rem] p-8 space-y-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="palette">palette</span>
+<h2 class="font-headline-md text-on-surface">Interface Theme</h2>
+</div>
+<div class="grid grid-cols-4 gap-4">
+<button class="flex flex-col items-center gap-2 group">
+<div class="w-12 h-12 rounded-full bg-[#181021] border-2 border-blue-500 ring-4 ring-blue-500/20 shadow-[0_0_15px_rgba(45,91,255,0.4)]"></div>
+<span class="font-label-caps text-[10px] text-blue-500">Midnight</span>
+</button>
+<button class="flex flex-col items-center gap-2 group">
+<div class="w-12 h-12 rounded-full bg-[#0d1117] border-2 border-white/10 hover:border-white/30 transition-colors"></div>
+<span class="font-label-caps text-[10px] text-on-surface-variant">Obsidian</span>
+</button>
+<button class="flex flex-col items-center gap-2 group">
+<div class="w-12 h-12 rounded-full bg-[#1a1c2c] border-2 border-white/10 hover:border-white/30 transition-colors"></div>
+<span class="font-label-caps text-[10px] text-on-surface-variant">Deep Sea</span>
+</button>
+<button class="flex flex-col items-center gap-2 group">
+<div class="w-12 h-12 rounded-full bg-[#2a0944] border-2 border-white/10 hover:border-white/30 transition-colors"></div>
+<span class="font-label-caps text-[10px] text-on-surface-variant">Nebula</span>
+</button>
+</div>
+<div class="pt-4 border-t border-white/5 space-y-4">
+<div class="flex justify-between items-center">
+<span class="font-body-lg text-on-surface">Auto-switch Dark Mode</span>
+<div class="w-12 h-6 rounded-full bg-primary-container relative cursor-pointer">
+<div class="absolute right-1 top-1 w-4 h-4 bg-white rounded-full"></div>
+</div>
+</div>
+</div>
+</section>
+<section class="glass-card rounded-[2rem] p-8 space-y-6">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="settings">settings</span>
+<h2 class="font-headline-md text-on-surface">Account Settings</h2>
+</div>
+<div class="space-y-4">
+<a class="flex items-center justify-between p-3 rounded-xl hover:bg-white/5 transition-colors group" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="mail">mail</span>
+<span class="font-body-lg text-on-surface">Change Email</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-3 rounded-xl hover:bg-white/5 transition-colors group" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="lock">lock</span>
+<span class="font-body-lg text-on-surface">Update Password</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</a>
+<a class="flex items-center justify-between p-3 rounded-xl hover:bg-white/5 transition-colors group" href="#">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="history">history</span>
+<span class="font-body-lg text-on-surface">Billing History</span>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform" data-icon="chevron_right">chevron_right</span>
+</a>
+</div>
+</section>
+</div>
+<section class="glass-card rounded-[2rem] p-8">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-8">
+<div class="space-y-2">
+<h2 class="font-headline-md text-on-surface">Danger Zone</h2>
+<p class="font-body-sm text-on-surface-variant">Irreversible actions for your profile and data.</p>
+</div>
+<div class="flex flex-wrap gap-4">
+<button class="px-8 py-3 rounded-full bg-white/5 hover:bg-white/10 text-on-surface font-label-caps transition-colors border border-white/10 active:scale-95">
+                                LOG OUT
+                            </button>
+<button class="px-8 py-3 rounded-full bg-error-container/20 hover:bg-error-container/40 text-error font-label-caps transition-colors border border-error/20 active:scale-95">
+                                DELETE ACCOUNT
+                            </button>
+</div>
+</div>
+</section>
+</div>
+</main>
+</div>
+<div class="fixed bottom-0 left-0 w-full z-50 flex flex-col pointer-events-none">
+<div class="w-full bg-slate-900/90 backdrop-blur-md border-t border-white/5 h-20 flex items-center justify-center px-6 pointer-events-auto overflow-hidden">
+<div class="relative w-full max-w-5xl h-14 bg-surface-container rounded-lg flex items-center px-6 overflow-hidden border border-white/10">
+<div class="absolute left-0 top-0 w-1.5 h-full bg-blue-500 shadow-[2px_0_10px_rgba(45,91,255,0.5)]"></div>
+<div class="flex-1 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<img class="w-10 h-10 rounded object-cover shadow-lg" data-alt="A vibrant and abstract album cover with flowing neon lines in electric blue and deep purple, representing rhythmic energy. The style is clean, modern, and minimalist, designed to fit into a sophisticated digital interface. The light reflects off the edges of the lines, creating a sense of depth and movement on a dark background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCP2-HtF7So7vQ2p7DQ5NoNzGUTPTZFGOyzpwlcFV13GO762q1ENin-f22n-xrnrZISeEffY_dNfHtdTuWyc4f7YwcEfjb7AiBhcNc32pbC7KTEA2_vochprs235NgxbEHzxS2ffOzUteEBAJYpMdZYegsivq_mlKTE_ybBmw_X-QFRC-pNwfyAqjqqIRn5VWCpYWTD_SE6BJZl7zzBKRz3vygkZs123dmGbKNZ2YYP3FPpzo4d3cQYTJMKdLaqt1MZxSe53xCQeg"/>
+<div>
+<p class="font-label-caps text-blue-400 text-[10px]">NOW PROMOTING</p>
+<p class="font-body-lg text-on-surface font-semibold truncate max-w-[150px] md:max-w-xs">Midnight Echoes - Digital Dreams Tour</p>
+</div>
+</div>
+<button class="bg-blue-600 hover:bg-blue-500 text-white font-label-caps px-6 py-2 rounded-full text-xs transition-all active:scale-95 shadow-lg shadow-blue-900/40">
+                        GET TICKETS
+                    </button>
+</div>
+</div>
+</div>
+<nav class="md:hidden w-full bg-slate-950/80 backdrop-blur-[24px] border-t border-white/10 h-[88px] flex justify-around items-center pb-safe px-6 pointer-events-auto">
+<a class="flex flex-col items-center justify-center text-slate-400 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-400 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="library_music">library_music</span>
+</a>
+<a class="flex flex-col items-center justify-center text-blue-500 after:content-[''] after:w-1 after:h-1 after:bg-blue-500 after:rounded-full after:mt-1 active:scale-90 transition-transform duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</a>
+</nav>
+</div>
+</body></html>
