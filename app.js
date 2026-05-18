@@ -264,6 +264,15 @@ function setTheme(themeName) {
 function setupAuthSimulator() {
   const loginForm = document.getElementById("login-form");
   const loginSubmitBtn = document.getElementById("login-submit-btn");
+
+  // Clear default mock credentials if Supabase is connected to avoid accidental clicks
+  if (supabase && loginForm) {
+    const emailInput = loginForm.querySelector("input[type='email']");
+    const pwdInput = loginForm.querySelector("input[type='password']");
+    if (emailInput && emailInput.value === "elena.vance@lumon.corp") emailInput.value = "";
+    if (pwdInput && pwdInput.value === "••••••••") pwdInput.value = "";
+  }
+
   const createAccountBtn = document.getElementById("create-account-btn");
   
   const welcomeText = document.getElementById("welcome-text");
@@ -341,6 +350,10 @@ function setupAuthSimulator() {
               createAccountBtn.click();
             }
           }
+        }).catch(err => {
+          loginSubmitBtn.disabled = false;
+          loginSubmitBtn.textContent = originalText;
+          showToast(`Network Error: ${err.message || err}`);
         });
       } else {
         // Log In with Supabase
@@ -371,6 +384,10 @@ function setupAuthSimulator() {
               setTimeout(() => switchScreen("home"), 500);
             }
           }
+        }).catch(err => {
+          loginSubmitBtn.disabled = false;
+          loginSubmitBtn.textContent = originalText;
+          showToast(`Connection Blocked: ${err.message || "Are you using an HTML Previewer?"}`);
         });
       }
     } else {
@@ -1527,10 +1544,16 @@ function setupExtendedInteractions() {
   
   if (sponsorDismiss) {
     sponsorDismiss.addEventListener("click", () => {
-      if (sponsorBanner) {
-        sponsorBanner.style.opacity = "0";
-        sponsorBanner.style.transform = "translateY(200px)";
-        setTimeout(() => sponsorBanner.remove(), 400);
+      const bannerEl = document.getElementById("sponsor-banner");
+      if (bannerEl) {
+        bannerEl.style.opacity = "0";
+        bannerEl.style.pointerEvents = "none";
+        bannerEl.classList.add("translate-y-[200px]", "opacity-0");
+        setTimeout(() => {
+          if (bannerEl && bannerEl.parentNode) {
+            bannerEl.parentNode.removeChild(bannerEl);
+          }
+        }, 400);
       }
     });
   }
