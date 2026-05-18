@@ -318,8 +318,8 @@ function setupAuthSimulator() {
   loginForm.addEventListener("submit", (e) => {
     e.preventDefault();
     
-    const email = loginForm.querySelector("input[type='email']").value.trim();
-    const password = loginForm.querySelector("input[type='password']").value;
+    const email = document.getElementById('auth-email').value.trim();
+    const password = document.getElementById('auth-password').value;
     
     // Add dynamic spinner state
     const originalText = loginSubmitBtn.textContent;
@@ -1543,12 +1543,12 @@ function setupExtendedInteractions() {
   }
   
   if (sponsorDismiss) {
-    sponsorDismiss.addEventListener("click", () => {
-      const bannerEl = document.getElementById("sponsor-banner");
+    sponsorDismiss.addEventListener('click', () => {
+      const bannerEl = document.getElementById('sponsor-banner');
       if (bannerEl) {
-        bannerEl.style.opacity = "0";
-        bannerEl.style.pointerEvents = "none";
-        bannerEl.classList.add("translate-y-[200px]", "opacity-0");
+        bannerEl.style.opacity = '0';
+        bannerEl.style.pointerEvents = 'none';
+        bannerEl.classList.add('translate-y-[200px]', 'opacity-0');
         setTimeout(() => {
           if (bannerEl && bannerEl.parentNode) {
             bannerEl.parentNode.removeChild(bannerEl);

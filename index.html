@@ -147,7 +147,7 @@
               <label class="font-label-caps text-label-caps text-outline uppercase ml-1">Email Address</label>
               <div class="relative">
                 <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-lg">mail</span>
-                <input class="w-full bg-surface-container-low border border-outline-variant rounded-lg py-3 pl-12 pr-4 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-sm" placeholder="name@domain.com" type="email" required value="elena.vance@lumon.corp"/>
+                <input id="auth-email" class="w-full bg-surface-container-low border border-outline-variant rounded-lg py-3 pl-12 pr-4 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-sm" placeholder="name@domain.com" type="email" required />
               </div>
             </div>
             <!-- Password -->
@@ -155,8 +155,8 @@
               <label class="font-label-caps text-label-caps text-outline uppercase ml-1">Password</label>
               <div class="relative">
                 <span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline text-lg">lock</span>
-                <input class="w-full bg-surface-container-low border border-outline-variant rounded-lg py-3 pl-12 pr-4 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-sm" placeholder="••••••••" type="password" required value="••••••••"/>
-                <button type="button" class="absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface transition-colors">
+                <input id="auth-password" class="w-full bg-surface-container-low border border-outline-variant rounded-lg py-3 pl-12 pr-4 text-on-surface focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all font-body-sm" placeholder="••••••••" type="password" required />
+                <button type="button" id="toggle-password-btn" class="absolute right-4 top-1/2 -translate-y-1/2 text-outline hover:text-on-surface transition-colors">
                   <span class="material-symbols-outlined text-lg">visibility</span>
                 </button>
               </div>
@@ -863,7 +863,7 @@
           </div>
           <div class="flex items-center gap-1.5 z-10 shrink-0">
             <button id="sponsor-upgrade-btn" class="bg-primary-container text-on-primary-container text-[10px] font-bold px-3 py-1.5 rounded-full uppercase active:scale-90 hover:scale-105 transition-all">Upgrade</button>
-            <button id="sponsor-dismiss-btn" class="text-outline hover:text-on-surface p-1 active:scale-75 transition-all rounded-full hover:bg-white/5">
+            <button id="sponsor-dismiss-btn" onclick="var b=document.getElementById('sponsor-banner');if(b){b.style.display='none';}" class="text-outline hover:text-on-surface p-1 active:scale-75 transition-all rounded-full hover:bg-white/5">
               <span class="material-symbols-outlined text-[16px]">close</span>
             </button>
           </div>
