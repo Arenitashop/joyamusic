@@ -10,11 +10,14 @@ create table if not exists public.profiles (
   id uuid references auth.users on delete cascade primary key,
   email text not null,
   display_name text,
+  bio text default '',
   subscription_tier text default 'Free Streamer',
   avatar_url text default 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80',
   created_at timestamp with time zone default timezone('utc'::text, now()) not null,
   updated_at timestamp with time zone default timezone('utc'::text, now()) not null
 );
+
+alter table public.profiles add column if not exists bio text default '';
 
 -- Habilitar Seguridad a Nivel de Fila (RLS)
 alter table public.profiles enable row level security;
@@ -22,11 +25,15 @@ alter table public.profiles enable row level security;
 -- Eliminar políticas previas si existen
 drop policy if exists "Permitir lectura pública de perfiles" on public.profiles;
 drop policy if exists "Los usuarios pueden actualizar su propio perfil" on public.profiles;
+drop policy if exists "Los usuarios pueden insertar su propio perfil" on public.profiles;
 
 -- Crear políticas de seguridad
 create policy "Permitir lectura pública de perfiles" on public.profiles
   for select using (true);
 
+
+create policy "Los usuarios pueden insertar su propio perfil" on public.profiles
+  for insert with check (auth.uid() = id);
 create policy "Los usuarios pueden actualizar su propio perfil" on public.profiles
   for update using (auth.uid() = id);
 

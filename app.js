@@ -90,7 +90,13 @@ function initSupabase() {
         url.trim() !== "" && 
         key.trim() !== "") {
       try {
-        supabase = window.supabase.createClient(url, key);
+        supabase = window.supabase.createClient(url, key, {
+          auth: {
+            persistSession: true,
+            autoRefreshToken: true,
+            detectSessionInUrl: true
+          }
+        });
         console.log("Supabase Client successfully initialized via supabase-config.js!");
         return true;
       } catch (err) {
@@ -259,50 +265,115 @@ function setTheme(themeName) {
   }
 }
 
-// 3. AUTH SIMULATOR
+function getDisplayNameFromEmail(email) {
+  if (!email) return "Joya Listener";
+  const username = email.split("@")[0] || "listener";
+  return username
+    .replace(/[._-]+/g, " ")
+    .replace(/\b\w/g, char => char.toUpperCase());
+}
+
+function applyProfileToUI(user, profile = {}) {
+  const email = profile.email || user?.email || "";
+  const displayName = profile.display_name || getDisplayNameFromEmail(email);
+  const avatarUrl = profile.avatar_url;
+
+  const profileName = document.getElementById("profile-display-name");
+  const profileEmail = document.getElementById("profile-display-email");
+  const personalNameInput = document.getElementById("edit-display-name");
+  const personalEmailInput = document.getElementById("edit-display-email");
+  const avatarHome = document.getElementById("avatar-img-home");
+  const avatarProfile = document.getElementById("avatar-img-profile");
+  const editAvatarPreview = document.getElementById("edit-avatar-preview");
+
+  if (profileName) profileName.textContent = displayName;
+  if (profileEmail) profileEmail.textContent = email;
+  if (personalNameInput) personalNameInput.value = displayName;
+  if (personalEmailInput) personalEmailInput.value = email;
+
+  if (avatarUrl) {
+    if (avatarHome) avatarHome.src = avatarUrl;
+    if (avatarProfile) avatarProfile.src = avatarUrl;
+    if (editAvatarPreview) editAvatarPreview.src = avatarUrl;
+  }
+}
+
+async function ensureUserProfile(user) {
+  if (!supabase || !user) return null;
+
+  const fallbackProfile = {
+    id: user.id,
+    email: user.email,
+    display_name: user.user_metadata?.display_name || getDisplayNameFromEmail(user.email)
+  };
+
+  const { data: existingProfile, error: selectError } = await supabase
+    .from("profiles")
+    .select("id,email,display_name,subscription_tier,avatar_url")
+    .eq("id", user.id)
+    .maybeSingle();
+
+  if (selectError) {
+    console.warn("Could not read Supabase profile:", selectError);
+  }
+
+  if (existingProfile) return existingProfile;
+
+  const { data: createdProfile, error: upsertError } = await supabase
+    .from("profiles")
+    .upsert(fallbackProfile, { onConflict: "id" })
+    .select("id,email,display_name,subscription_tier,avatar_url")
+    .maybeSingle();
+
+  if (upsertError) {
+    console.warn("Could not create Supabase profile:", upsertError);
+    return fallbackProfile;
+  }
+
+  return createdProfile || fallbackProfile;
+}
+
+async function enterAuthenticatedApp(user, toastMessage) {
+  const profile = await ensureUserProfile(user);
+  state.user = user;
+  applyProfileToUI(user, profile);
+  if (toastMessage) showToast(toastMessage);
+  switchScreen("home");
+}
+
 // 3. REAL SUPABASE AUTH & SANDBOX BACKUP
 function setupAuthSimulator() {
   const loginForm = document.getElementById("login-form");
   const loginSubmitBtn = document.getElementById("login-submit-btn");
-
-  // Clear default mock credentials if Supabase is connected to avoid accidental clicks
-  if (supabase && loginForm) {
-    const emailInput = loginForm.querySelector("input[type='email']");
-    const pwdInput = loginForm.querySelector("input[type='password']");
-    if (emailInput && emailInput.value === "elena.vance@lumon.corp") emailInput.value = "";
-    if (pwdInput && pwdInput.value === "••••••••") pwdInput.value = "";
-  }
-
   const createAccountBtn = document.getElementById("create-account-btn");
-  
   const welcomeText = document.getElementById("welcome-text");
   const welcomeSub = document.getElementById("welcome-sub");
-  
+
+  if (!loginForm || !loginSubmitBtn || !createAccountBtn) return;
+
   let isCreateAccountState = false;
 
-  // Toggle Login / Create Account Mode in DOM
   createAccountBtn.addEventListener("click", (e) => {
     e.preventDefault();
     isCreateAccountState = !isCreateAccountState;
-    
+
     if (isCreateAccountState) {
       welcomeText.textContent = "Create Account";
       welcomeSub.textContent = "Join the high-fidelity sound immersion.";
       loginSubmitBtn.textContent = "Sign Up";
       createAccountBtn.textContent = "Back to Log In";
     } else {
-      welcomeText.textContent = "STREAM";
+      welcomeText.textContent = "JoyaMusic";
       welcomeSub.textContent = "Your nocturnal portal to high-fidelity rhythmic immersion.";
       loginSubmitBtn.textContent = "Log In";
       createAccountBtn.textContent = "Create Account";
     }
   });
 
-  // Toggle password visibility
   const togglePasswordBtn = loginForm.querySelector("button[type='button']");
   if (togglePasswordBtn) {
     togglePasswordBtn.addEventListener("click", () => {
-      const pwdInput = loginForm.querySelector("input[type='password']");
+      const pwdInput = loginForm.querySelector("#auth-password");
       const icon = togglePasswordBtn.querySelector("span");
       if (pwdInput && pwdInput.type === "password") {
         pwdInput.type = "text";
@@ -314,15 +385,13 @@ function setupAuthSimulator() {
     });
   }
 
-  // Authentication Submission
-  loginForm.addEventListener("submit", (e) => {
+  loginForm.addEventListener("submit", async (e) => {
     e.preventDefault();
-    
-    const email = document.getElementById('auth-email').value.trim();
-    const password = document.getElementById('auth-password').value;
-    
-    // Add dynamic spinner state
+
+    const email = document.getElementById("auth-email").value.trim();
+    const password = document.getElementById("auth-password").value;
     const originalText = loginSubmitBtn.textContent;
+
     loginSubmitBtn.disabled = true;
     loginSubmitBtn.innerHTML = `
       <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white inline-block" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
@@ -331,134 +400,81 @@ function setupAuthSimulator() {
       </svg>
       Connecting Auth...
     `;
-    
+
     if (supabase) {
-      if (isCreateAccountState) {
-        // Sign Up with Supabase
-        supabase.auth.signUp({ email, password }).then(({ data, error }) => {
-          loginSubmitBtn.disabled = false;
-          loginSubmitBtn.textContent = originalText;
-          if (error) {
-            showToast(`Sign Up Error: ${error.message}`);
-          } else {
-            showToast("🎉 Sign Up successful! Check your email.");
-            if (data.user && data.user.identities && data.user.identities.length === 0) {
-              showToast("Email already exists. Try logging in.");
-            } else {
-              alert("📬 Verification email sent! Please check your inbox and verify your email before logging in.");
-              // Trigger click to toggle back to login state
-              createAccountBtn.click();
+      try {
+        if (isCreateAccountState) {
+          const displayName = getDisplayNameFromEmail(email);
+          const { data, error } = await supabase.auth.signUp({
+            email,
+            password,
+            options: {
+              data: { display_name: displayName }
             }
-          }
-        }).catch(err => {
-          loginSubmitBtn.disabled = false;
-          loginSubmitBtn.textContent = originalText;
-          showToast(`Network Error: ${err.message || err}`);
-        });
-      } else {
-        // Log In with Supabase
-        supabase.auth.signInWithPassword({ email, password }).then(({ data, error }) => {
-          loginSubmitBtn.disabled = false;
-          loginSubmitBtn.textContent = originalText;
-          if (error) {
-            showToast(`Login Error: ${error.message}`);
+          });
+
+          if (error) throw error;
+
+          if (data.session && data.user) {
+            await enterAuthenticatedApp(data.user, "Account created. Welcome to JoyaMusic.");
           } else {
-            const user = data.user;
-            if (user) {
-              showToast("🎉 Login successful! Loading session...");
-              
-              const username = user.email.split("@")[0];
-              const formattedName = username.charAt(0).toUpperCase() + username.slice(1);
-              
-              const profileName = document.getElementById("profile-display-name");
-              const profileEmail = document.getElementById("profile-display-email");
-              if (profileName) profileName.textContent = formattedName;
-              if (profileEmail) profileEmail.textContent = user.email;
-
-              const personalNameInput = document.getElementById("edit-display-name");
-              const personalEmailInput = document.getElementById("edit-display-email");
-              if (personalNameInput) personalNameInput.value = formattedName;
-              if (personalEmailInput) personalEmailInput.value = user.email;
-
-              state.user = user;
-              setTimeout(() => switchScreen("home"), 500);
-            }
+            showToast("Account created. Check your email to verify it.");
+            createAccountBtn.click();
           }
-        }).catch(err => {
-          loginSubmitBtn.disabled = false;
-          loginSubmitBtn.textContent = originalText;
-          showToast(`Connection Blocked: ${err.message || "Are you using an HTML Previewer?"}`);
-        });
+        } else {
+          const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+          if (error) throw error;
+          if (data.user) {
+            await enterAuthenticatedApp(data.user, "Login successful. Loading home.");
+          }
+        }
+      } catch (err) {
+        const action = isCreateAccountState ? "Sign up" : "Login";
+        showToast(`${action} error: ${err.message || err}`);
+      } finally {
+        loginSubmitBtn.disabled = false;
+        loginSubmitBtn.textContent = originalText;
       }
     } else {
-      // Sandbox mode mock login
       setTimeout(() => {
         loginSubmitBtn.disabled = false;
         loginSubmitBtn.textContent = originalText;
-        
-        const username = email.split("@")[0];
-        const formattedName = username.charAt(0).toUpperCase() + username.slice(1);
-        
-        const profileName = document.getElementById("profile-display-name");
-        const profileEmail = document.getElementById("profile-display-email");
-        if (profileName) profileName.textContent = formattedName;
-        if (profileEmail) profileEmail.textContent = email;
-        
-        const personalNameInput = document.getElementById("edit-display-name");
-        const personalEmailInput = document.getElementById("edit-display-email");
-        if (personalNameInput) personalNameInput.value = formattedName;
-        if (personalEmailInput) personalEmailInput.value = email;
 
-        showToast("⚡ Sandbox Offline Mode: Session loaded.");
+        const offlineUser = { email };
+        applyProfileToUI(offlineUser, {
+          email,
+          display_name: getDisplayNameFromEmail(email)
+        });
+
+        showToast("Offline preview session loaded.");
         switchScreen("home");
-      }, 1200);
+      }, 700);
     }
   });
 
-  // Log Out handler
   const logoutBtn = document.getElementById("btn-logout");
   if (logoutBtn) {
-    logoutBtn.addEventListener("click", () => {
+    logoutBtn.addEventListener("click", async () => {
       pauseMusic();
       if (supabase) {
-        supabase.auth.signOut().then(() => {
-          state.user = null;
-          showToast("Logged out successfully.");
-          switchScreen("auth");
-        });
-      } else {
-        switchScreen("auth");
+        await supabase.auth.signOut();
       }
+      state.user = null;
+      showToast("Logged out successfully.");
+      switchScreen("auth");
     });
   }
 
-
-  // Auto-login active Supabase session on application startup
   if (supabase) {
-    supabase.auth.getSession().then(({ data, error }) => {
-      if (data && data.session && data.session.user) {
-        const user = data.session.user;
-        const username = user.email.split("@")[0];
-        const formattedName = username.charAt(0).toUpperCase() + username.slice(1);
-        
-        const profileName = document.getElementById("profile-display-name");
-        const profileEmail = document.getElementById("profile-display-email");
-        if (profileName) profileName.textContent = formattedName;
-        if (profileEmail) profileEmail.textContent = user.email;
-
-        const personalNameInput = document.getElementById("edit-display-name");
-        const personalEmailInput = document.getElementById("edit-display-email");
-        if (personalNameInput) personalNameInput.value = formattedName;
-        if (personalEmailInput) personalEmailInput.value = user.email;
-
-        state.user = user;
-        showToast(`⚡ Session loaded: ${formattedName}`);
-        setTimeout(() => switchScreen("home"), 500);
-      }
-    }).catch(err => console.log("Session recovery bypass:", err));
+    supabase.auth.getSession()
+      .then(({ data }) => {
+        if (data?.session?.user) {
+          enterAuthenticatedApp(data.session.user, `Session loaded: ${getDisplayNameFromEmail(data.session.user.email)}`);
+        }
+      })
+      .catch(err => console.log("Session recovery bypass:", err));
   }
 }
-
 // 4. AUDIO PLAYER ENGINE & WEB AUDIO CONTROLS
 function setupAudioEngine() {
   const playPauseBtnNP = document.getElementById("np-play-pause-btn");
@@ -1297,7 +1313,7 @@ function setupExtendedInteractions() {
   // 1. Personal Information Form Submit
   const personalInfoForm = document.getElementById("personal-info-form");
   if (personalInfoForm) {
-    personalInfoForm.addEventListener("submit", (e) => {
+    personalInfoForm.addEventListener("submit", async (e) => {
       e.preventDefault();
       
       const newNameInput = document.getElementById("edit-display-name");
@@ -1324,6 +1340,23 @@ function setupExtendedInteractions() {
         if (avatarProfile) avatarProfile.src = selectedSrc;
       }
       
+      if (supabase && state.user) {
+        const { error } = await supabase
+          .from("profiles")
+          .update({
+            display_name: newNameInput?.value || getDisplayNameFromEmail(state.user.email),
+            email: newEmailInput?.value || state.user.email,
+            avatar_url: editAvatarPreview?.src || null,
+            updated_at: new Date().toISOString()
+          })
+          .eq("id", state.user.id);
+
+        if (error) {
+          showToast(`Profile save error: ${error.message}`);
+          return;
+        }
+      }
+
       showToast("Changes saved successfully!");
       closePanel("panel-personal-info");
     });
